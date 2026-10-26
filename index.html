@@ -8,8 +8,8 @@
   <meta name="author" content="Yuhan Wei">
   <meta name="description"
         content="Yuhan Wei's portfolio: robotics, education, skills and projects.">
- <meta name="theme-color" content="#52dc88">
-
+ <meta name="theme-color" content="#16866b">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
@@ -1065,6 +1065,108 @@ a {
 .project-links a.resource-icon:hover {
   background: #9aefb3;
   color: var(--dark-green);
+}
+    /* Fresh green palette */
+:root {
+  --green: #16866b;
+  --dark-green: #09634f;
+  --text: #263e35;
+  --muted: #586e63;
+  --background: #f4faf6;
+  --border: #d8e9df;
+  --light-green: #e4f5ec;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+}
+
+/* Homepage */
+.hero {
+  background: linear-gradient(120deg, #46b78d, #16866b);
+}
+
+.hero-university {
+  color: #f0fff5;
+}
+
+.button.primary {
+  color: var(--dark-green);
+}
+
+.button:hover {
+  background: #e4f5ec;
+  color: var(--dark-green);
+}
+
+/* Sidebar */
+.avatar {
+  background: var(--light-green);
+  border-color: #c5e8d5;
+  color: var(--dark-green);
+}
+
+.sidebar nav a {
+  color: #3d5a4b;
+}
+
+.sidebar nav a:hover {
+  background: var(--light-green);
+  border-left-color: var(--green);
+  color: var(--dark-green);
+}
+
+/* Section and project headings */
+.section-title {
+  background: var(--green);
+  color: white;
+}
+
+.card h3,
+#research .card h3 {
+  color: var(--dark-green);
+}
+
+.gallery-category {
+  background: var(--dark-green);
+  color: white;
+}
+
+.project-description {
+  color: #4d6257;
+}
+
+/* Skills and language bars */
+.skill-list span {
+  background: #ecf8f0;
+  border-color: #cce6d6;
+  color: var(--dark-green);
+}
+
+.language-scale span {
+  background: #deece3;
+}
+
+.language-scale .filled {
+  background: var(--green);
+}
+
+/* Links and GitHub icon */
+a {
+  color: var(--green);
+}
+
+#research .github-link,
+.project-links a.resource-icon {
+  background: var(--light-green);
+  color: var(--green);
+}
+
+#research .github-link:hover,
+.project-links a.resource-icon:hover {
+  background: var(--green);
+  color: white;
 }
   </style>
 </head>
