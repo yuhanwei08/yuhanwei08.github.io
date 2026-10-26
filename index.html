@@ -1168,7 +1168,166 @@ a {
   background: var(--green);
   color: white;
 }
-  
+  /* Engineering project cards */
+.engineering-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+.engineering-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 4px 16px rgba(0, 77, 64, 0.07);
+}
+
+/* Cover */
+.engineering-cover {
+  padding: 14px;
+  border-bottom: 1px solid var(--border);
+  background: #edf6f1;
+}
+
+.engineering-cover .carousel-slide {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  border: none;
+  border-radius: 5px;
+  background: white;
+}
+
+.engineering-cover .carousel-slide[hidden] {
+  display: none !important;
+}
+
+.engineering-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Card information */
+.engineering-card-body {
+  padding: 24px;
+}
+
+.engineering-category {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--green);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.engineering-card h3 {
+  margin: 0 0 10px;
+  color: var(--dark-green);
+  font-size: 27px;
+  line-height: 1.25;
+}
+
+.engineering-meta {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.engineering-summary {
+  margin: 0;
+  color: #595959;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.engineering-author {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+  font-size: 20px;
+}
+
+/* Expandable contributions */
+.engineering-details {
+  margin-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.engineering-details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 15px 0 0;
+  color: var(--green);
+  font-size: 18px;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+
+.engineering-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.engineering-details summary:focus-visible {
+  outline: 3px solid #d99b35;
+  outline-offset: 4px;
+}
+
+.engineering-expand {
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.engineering-details[open] .engineering-expand {
+  transform: rotate(45deg);
+}
+
+.engineering-details-content {
+  padding-top: 18px;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.engineering-details-content h4 {
+  margin: 0 0 8px;
+  color: var(--dark-green);
+  font-size: 21px;
+}
+
+.engineering-details-content ul {
+  margin: 0 0 20px;
+  padding-left: 22px;
+}
+
+.engineering-details-content li {
+  margin-bottom: 8px;
+}
+
+.engineering-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+@media (max-width: 800px) {
+  .engineering-grid {
+    grid-template-columns: 1fr;
+  }
+}
+    
   </style>
 </head>
 
@@ -1326,15 +1485,114 @@ a {
       </div>
     </section>
 
-    <section id="projects" class="pending"
-             aria-labelledby="projects-title">
-      <h2 id="projects-title" class="section-title">
-        Engineering Projects
-      </h2>
-      <div class="section-content">
-        <!-- Projects will be added individually after reviewing the materials. -->
-      </div>
-    </section>
+    <section id="projects" aria-labelledby="projects-title">
+  <h2 id="projects-title" class="section-title">
+    Engineering Projects
+  </h2>
+
+  <div class="section-content">
+    <div class="engineering-grid">
+
+      <article class="engineering-card">
+
+        <!-- Cover images: use the existing automatic slideshow script -->
+        <div class="engineering-cover project-carousel"
+             aria-label="MATLAB music player screenshots">
+
+          <div class="carousel-slide">
+            <img
+              src="assets/img/matlab-player-playback.png"
+              alt="MATLAB music player during playback with audio waveforms">
+          </div>
+
+          <div class="carousel-slide" hidden>
+            <img
+              src="assets/img/matlab-player-interface.png"
+              alt="MATLAB music player interface and playback controls">
+          </div>
+        </div>
+
+        <div class="engineering-card-body">
+          <span class="engineering-category">
+            Audio Processing · MATLAB
+          </span>
+
+          <h3>MATLAB Music Player</h3>
+
+          <p class="engineering-meta">
+            Computer Simulation Coursework<br>
+            Individual Project · 2024
+          </p>
+
+          <p class="engineering-summary">
+            Developed a desktop music player with playlist management,
+            playback controls, audio effects and signal visualisation
+            using MATLAB App Designer.
+          </p>
+
+          <div class="engineering-author">
+            <strong>Yuhan Wei</strong>
+            <!-- Add the confirmed project mark here later. -->
+          </div>
+
+          <details class="engineering-details">
+            <summary>
+              <span>My Contribution &amp; Features</span>
+              <span class="engineering-expand" aria-hidden="true">+</span>
+            </summary>
+
+            <div class="engineering-details-content">
+              <h4>My Contribution</h4>
+              <ul>
+                <li>
+                  Designed the interface and implemented playlist
+                  management and playback callbacks.
+                </li>
+                <li>
+                  Connected playback progress and time displays
+                  to timer-driven updates.
+                </li>
+                <li>
+                  Integrated audio-processing functions and signal
+                  visualisation, and prepared the coursework
+                  report and presentation.
+                </li>
+              </ul>
+
+              <h4>Key Features</h4>
+              <ul>
+                <li>
+                  Audio import and removal, play/pause,
+                  stop and track switching.
+                </li>
+                <li>
+                  Volume adjustment, playback-position seeking
+                  and playback-speed controls.
+                </li>
+                <li>
+                  Time-domain waveforms, FFT-based spectrum
+                  and a peak-based envelope display.
+                </li>
+                <li>
+                  A delay effect and basic stereo vocal reduction.
+                </li>
+              </ul>
+
+              <p class="engineering-note">
+                Vocal reduction uses channel subtraction and filtering;
+                it is not an AI source-separation system.
+              </p>
+            </div>
+          </details>
+
+        </div>
+      </article>
+
+      <!-- Add future engineering project cards here. -->
+
+    </div>
+  </div>
+</section>
 
     <section id="skills" aria-labelledby="skills-title">
       <h2 id="skills-title" class="section-title">Skills</h2>
