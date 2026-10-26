@@ -1620,6 +1620,33 @@ a {
 .vp-project-cover .gallery-note {
   display: none !important;
 }
+
+/* Wider cards without reducing the font size */
+#projects .vp-project-grid {
+  grid-template-columns:
+    repeat(auto-fill, minmax(min(100%, 460px), 1fr));
+  gap: 28px;
+}
+
+.vp-project-front h3 {
+  white-space: nowrap;
+}
+
+/* Allow wrapping on narrow phone screens */
+@media (max-width: 600px) {
+  .vp-project-front h3 {
+    white-space: normal;
+  }
+}
+
+.vp-project-panel > .vp-github-link {
+  display: flex;
+  width: 44px;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+
     
   </style>
 </head>
