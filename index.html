@@ -950,15 +950,32 @@
   </main>
 
   <script>
-  // Close the mobile menu after selecting a section.
+  // Mobile navigation.
   document.querySelectorAll('.mobile-menu a').forEach(function (link) {
     link.addEventListener('click', function () {
       document.querySelector('.mobile-menu').open = false;
     });
   });
 
-  // Automatically cycle through project images every four seconds.
   document.querySelectorAll('.project-carousel').forEach(function (carousel) {
+    // Remove arrows, dots and playback buttons.
+    carousel.querySelectorAll('.carousel-controls').forEach(function (controls) {
+      controls.remove();
+    });
+
+    // Replace image links with ordinary containers.
+    carousel.querySelectorAll('a.carousel-slide').forEach(function (link) {
+      const container = document.createElement('div');
+      container.className = link.className;
+      container.hidden = link.hidden;
+
+      while (link.firstChild) {
+        container.appendChild(link.firstChild);
+      }
+
+      link.replaceWith(container);
+    });
+
     const slides = Array.from(
       carousel.querySelectorAll('.carousel-slide')
     );
@@ -983,6 +1000,16 @@
       }
     }
 
+    // Remove the outdated enlargement instruction.
+    const gallery = carousel.closest('.project-gallery');
+    const note = gallery && gallery.querySelector('.gallery-note');
+
+    if (note) {
+      note.textContent =
+        'Chart labels were translated into English using AI image editing; ' +
+        'original figures are retained in the dissertation.';
+    }
+
     if (slides.length === 0) return;
 
     showSlide(current);
@@ -991,7 +1018,7 @@
       window.setInterval(function () {
         current = (current + 1) % slides.length;
         showSlide(current);
-      }, 4000);
+      }, 1000);
     }
   });
 </script>
