@@ -834,6 +834,59 @@ footer {
     flex-basis: 100%;
   }
 }
+    /* Match the project's colours to the green template */
+
+/* Category banner above the images */
+.gallery-category {
+  background: var(--dark-green);
+  color: white;
+}
+
+/* Project title */
+#research .card h3 {
+  color: var(--dark-green);
+}
+
+/* PDF and Code buttons */
+.project-links a {
+  border-color: var(--green);
+  color: var(--green);
+  background: white;
+}
+
+.project-links a:hover {
+  background: var(--green);
+  color: white;
+}
+
+/* Keep the italic description in dark grey */
+.project-description {
+  color: #595959;
+}
+    /* Increase sidebar text sizes by 2px */
+.sidebar .profile-name {
+  font-size: 32px;
+}
+
+.sidebar .profile-role {
+  font-size: 20px;
+}
+
+.sidebar nav a {
+  font-size: 21px;
+}
+
+.sidebar-footer {
+  font-size: 20px;
+}
+
+.sidebar-footer p {
+  font-size: 19px;
+}
+
+.sidebar .avatar {
+  font-size: 34px;
+}
   </style>
 </head>
 
@@ -969,10 +1022,6 @@ footer {
 
               <p class="project-description">
                 Developed an eight-class flower recognition system using EfficientNet-B3 and transfer learning. Built a dataset of 1,169 images and integrated the trained model into a Flask web application supporting image upload, preview, and top-three predictions with confidence scores. The saved model achieved 95.38% validation accuracy. (Press PDF to know more)
-              </p>
-
-              <p style="margin-top:16px; color:#00796b; font-size:14px;">
-                Python · PyTorch · EfficientNet-B3 · Flask
               </p>
 
               <div class="project-links" aria-label="Project resources">
