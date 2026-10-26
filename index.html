@@ -639,6 +639,201 @@ nav, summary, button,
 input, select, textarea {
   font-family: inherit;
 }
+    /* Typography and sidebar width */
+:root {
+  --sidebar-width: 310px;
+}
+
+body {
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4,
+p, a, span, strong,
+nav, summary, button {
+  font-family: inherit;
+}
+
+.profile {
+  padding: 34px 28px 28px;
+}
+
+.profile-name {
+  font-size: 30px;
+}
+
+.profile-role {
+  font-size: 18px;
+}
+
+.sidebar nav a {
+  padding: 13px 28px;
+  font-size: 19px;
+}
+
+.sidebar-footer {
+  padding: 24px 28px;
+  font-size: 18px;
+}
+
+.sidebar-footer p {
+  font-size: 17px;
+}
+
+.section-title {
+  padding: 22px 5%;
+  font-size: 32px;
+}
+
+.section-content {
+  padding: 36px 5% 46px;
+}
+
+.card h3 {
+  font-size: 25px;
+  line-height: 1.4;
+}
+
+.date {
+  font-size: 17px;
+}
+
+.award-list strong {
+  font-size: 20px;
+}
+
+.award-list span,
+.language-label span {
+  font-size: 19px;
+}
+
+.language-note {
+  font-size: 16px;
+}
+
+footer {
+  font-size: 16px;
+}
+
+/* Project styling inspired by the reference */
+#research .card h3 {
+  color: #229bd0;
+  font-weight: 600;
+}
+
+.project-description {
+  color: #595959;
+  font-size: 21px;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.project-gallery {
+  flex-basis: 340px;
+}
+
+.gallery-category {
+  background: #00356b;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.project-links a {
+  padding: 4px 15px;
+  border: 1px solid #00356b;
+  border-radius: 2px;
+  background: white;
+  color: #00356b;
+  font-size: 18px;
+}
+
+.project-links a:hover {
+  background: #00356b;
+  color: white;
+}
+
+#research .card p[style*="font-size:14px"] {
+  font-size: 18px !important;
+}
+
+/* Image-only slideshow */
+.carousel-slide[hidden] {
+  display: none !important;
+}
+
+.carousel-controls,
+.carousel-caption,
+.gallery-note {
+  display: none !important;
+}
+
+/* Tablet and mobile */
+@media (max-width: 1100px) {
+  .sidebar {
+    display: none;
+  }
+
+  main {
+    margin-left: 0;
+  }
+
+  .mobile-menu {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: white;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mobile-menu summary {
+    padding: 16px 22px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .mobile-menu nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0 14px 14px;
+    max-height: 65vh;
+    overflow-y: auto;
+  }
+
+  .mobile-menu nav a {
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  section {
+    scroll-margin-top: 75px;
+  }
+}
+
+@media (max-width: 760px) {
+  body {
+    font-size: 18px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .card h3 {
+    font-size: 24px;
+  }
+
+  .project-description {
+    font-size: 20px;
+  }
+
+  .project-gallery {
+    flex-basis: 100%;
+  }
+}
   </style>
 </head>
 
@@ -772,13 +967,8 @@ input, select, textarea {
                 Yuhan Wei
               </p>
 
-              <p>
-                Developed an eight-class flower recognition system using
-                EfficientNet-B3 and transfer learning. Built a dataset of
-                1,169 images and integrated the trained model into a Flask
-                web application supporting image upload, preview, and
-                top-three predictions with confidence scores. The saved
-                model achieved 95.38% validation accuracy.
+              <p class="project-description">
+                Developed an eight-class flower recognition system using EfficientNet-B3 and transfer learning. Built a dataset of 1,169 images and integrated the trained model into a Flask web application supporting image upload, preview, and top-three predictions with confidence scores. The saved model achieved 95.38% validation accuracy. (Press PDF to know more)
               </p>
 
               <p style="margin-top:16px; color:#00796b; font-size:14px;">
@@ -961,7 +1151,6 @@ input, select, textarea {
   </main>
 
   <script>
-  // Mobile navigation.
   document.querySelectorAll('.mobile-menu a').forEach(function (link) {
     link.addEventListener('click', function () {
       document.querySelector('.mobile-menu').open = false;
@@ -969,15 +1158,19 @@ input, select, textarea {
   });
 
   document.querySelectorAll('.project-carousel').forEach(function (carousel) {
-    // Remove arrows, dots and playback buttons.
-    carousel.querySelectorAll('.carousel-controls').forEach(function (controls) {
-      controls.remove();
+    const gallery = carousel.closest('.project-gallery') || carousel;
+
+    // Remove controls and all text below the images.
+    gallery.querySelectorAll(
+      '.carousel-controls, .carousel-caption, .gallery-note'
+    ).forEach(function (element) {
+      element.remove();
     });
 
-    // Replace image links with ordinary containers.
+    // Remove links that open enlarged images.
     carousel.querySelectorAll('a.carousel-slide').forEach(function (link) {
       const container = document.createElement('div');
-      container.className = link.className;
+      container.className = 'carousel-slide';
       container.hidden = link.hidden;
 
       while (link.firstChild) {
@@ -991,249 +1184,23 @@ input, select, textarea {
       carousel.querySelectorAll('.carousel-slide')
     );
 
-    carousel.querySelectorAll('.carousel-caption').forEach(function (element) {
-  element.remove();
-});
-
-const caption = null;
-
-    const captions = [
-      'English interface for image upload and recognition.',
-      'Training and validation loss; selected checkpoint at epoch 10.',
-      'Training and validation accuracy; best validation accuracy: 95.38%.'
-    ];
+    if (slides.length === 0) return;
 
     let current = 0;
 
-    function showSlide(index) {
-      slides.forEach(function (slide, i) {
-        slide.hidden = i !== index;
+    function showSlide() {
+      slides.forEach(function (slide, index) {
+        slide.hidden = index !== current;
       });
-
-      if (caption) {
-        caption.textContent = captions[index] || '';
-      }
     }
 
-    // Remove the outdated enlargement instruction.
-    const gallery = carousel.closest('.project-gallery');
-    const note = gallery && gallery.querySelector('.gallery-note');
+    showSlide();
 
-    if (note) {
-  note.remove();
-    }
-
-    if (slides.length === 0) return;
-
-    showSlide(current);
-
-    if (slides.length > 1) {
-      window.setInterval(function () {
-        current = (current + 1) % slides.length;
-        showSlide(current);
-      }, 1000);
-    }
+    window.setInterval(function () {
+      current = (current + 1) % slides.length;
+      showSlide();
+    }, 1000);
   });
-    /* Wider sidebar and larger typography */
-:root {
-  --sidebar-width: 310px;
-}
-
-body {
-  font-size: 18px;
-  line-height: 1.8;
-}
-
-/* Sidebar */
-.profile {
-  padding: 34px 28px 28px;
-}
-
-.avatar {
-  width: 96px;
-  height: 96px;
-  font-size: 32px;
-}
-
-.profile-name {
-  font-size: 29px;
-}
-
-.profile-role {
-  font-size: 16px;
-}
-
-.sidebar nav a {
-  padding: 13px 28px;
-  font-size: 17px;
-}
-
-.sidebar-footer {
-  padding: 24px 28px;
-  font-size: 16px;
-}
-
-.sidebar-footer p {
-  font-size: 15px;
-}
-
-/* Main content */
-.section-title {
-  padding: 22px 5%;
-  font-size: 30px;
-}
-
-.section-content {
-  padding: 36px 5% 46px;
-}
-
-.card {
-  padding: 30px;
-}
-
-.card h3 {
-  font-size: 23px;
-  line-height: 1.5;
-}
-
-.date {
-  font-size: 16px;
-}
-
-.hero-role {
-  font-size: 28px;
-}
-
-.hero-university {
-  font-size: 21px;
-}
-
-.eyebrow {
-  font-size: 15px;
-}
-
-.button {
-  font-size: 17px;
-}
-
-.skill-list span {
-  font-size: 18px;
-}
-
-.award-list strong {
-  font-size: 18px;
-}
-
-.award-list span {
-  font-size: 17px;
-}
-
-.language-label span {
-  font-size: 17px;
-}
-
-.language-note {
-  font-size: 15px;
-}
-
-/* Project images and resource buttons */
-.project-gallery {
-  flex-basis: 340px;
-}
-
-.gallery-category {
-  font-size: 15px;
-}
-
-.gallery-note {
-  font-size: 13px;
-}
-
-.project-links a {
-  padding: 7px 19px;
-  font-size: 16px;
-}
-
-/* Override the existing inline project text sizes */
-#research .card p[style*="font-size:14px"] {
-  font-size: 17px !important;
-}
-
-footer {
-  font-size: 14px;
-}
-
-/* Tablet and mobile navigation */
-@media (max-width: 1100px) {
-  .sidebar {
-    display: none;
-  }
-
-  main {
-    margin-left: 0;
-  }
-
-  .mobile-menu {
-    display: block;
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    border-bottom: 1px solid var(--border);
-    background: white;
-  }
-
-  .mobile-menu summary {
-    padding: 16px 22px;
-    color: var(--dark-green);
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  .mobile-menu nav {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 4px;
-    padding: 0 14px 14px;
-    max-height: 65vh;
-    overflow-y: auto;
-  }
-
-  .mobile-menu nav a {
-    padding: 10px;
-    font-size: 16px;
-  }
-
-  section {
-    scroll-margin-top: 75px;
-  }
-}
-
-@media (max-width: 760px) {
-  body {
-    font-size: 17px;
-  }
-
-  .section-title {
-    font-size: 26px;
-  }
-
-  .section-content {
-    padding: 26px 5% 34px;
-  }
-
-  .card {
-    padding: 24px;
-  }
-
-  .card h3 {
-    font-size: 22px;
-  }
-
-  .project-gallery {
-    flex-basis: 100%;
-  }
-}
 </script>
 </body>
 </html>
