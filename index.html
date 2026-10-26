@@ -1327,6 +1327,190 @@ a {
     grid-template-columns: 1fr;
   }
 }
+/* Varad-style project grid */
+.vp-project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+/* Fixed frame */
+.vp-project-card {
+  --cover-height: 270px;
+  position: relative;
+  height: 550px;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 77, 64, 0.12);
+}
+
+/* Cover images */
+.vp-project-cover {
+  height: var(--cover-height);
+  padding: 12px;
+  background: #edf6f1;
+}
+
+.vp-project-cover .carousel-slide {
+  height: 100%;
+  width: 100%;
+  aspect-ratio: auto;
+  border: none;
+  border-radius: 0;
+  background: white;
+}
+
+.vp-project-cover .carousel-slide[hidden] {
+  display: none !important;
+}
+
+.vp-project-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Front information */
+.vp-project-front {
+  padding: 24px;
+}
+
+.vp-project-front h3,
+.vp-project-panel h3 {
+  margin: 0 42px 12px 0;
+  color: var(--green);
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.vp-project-front p,
+.vp-project-panel p {
+  margin: 0 0 16px;
+  font-size: 20px;
+  line-height: 1.55;
+}
+
+.vp-project-card .vp-project-meta {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Three-dot control */
+.vp-project-details summary {
+  position: absolute;
+  top: calc(var(--cover-height) + 19px);
+  right: 14px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: white;
+  color: var(--green);
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  line-height: 1;
+  list-style: none;
+  cursor: pointer;
+}
+
+.vp-project-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.vp-project-details summary:hover {
+  background: #edf6f1;
+}
+
+.vp-project-details summary:focus-visible {
+  outline: 3px solid #d99b35;
+  outline-offset: 2px;
+}
+
+.vp-close-icon {
+  display: none;
+}
+
+/* Open state: show close control */
+.vp-project-details[open] summary {
+  top: 12px;
+  right: 12px;
+}
+
+.vp-project-details[open] .vp-open-icon {
+  display: none;
+}
+
+.vp-project-details[open] .vp-close-icon {
+  display: inline;
+}
+
+/* Details overlay: stays inside the original frame */
+.vp-project-panel {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow-y: auto;
+  padding: 28px 24px;
+  background: white;
+  color: var(--text);
+}
+
+.vp-project-panel h4 {
+  margin: 20px 0 8px;
+  color: var(--dark-green);
+  font-size: 21px;
+}
+
+.vp-project-panel ul {
+  margin: 0 0 18px;
+  padding-left: 22px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.vp-project-panel li {
+  margin-bottom: 8px;
+}
+
+/* Code link */
+.vp-code-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  padding: 9px 16px;
+  border: 1px solid var(--green);
+  border-radius: 4px;
+  color: var(--green);
+  font-size: 18px;
+}
+
+.vp-code-link:hover {
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+}
+
+.vp-code-link span {
+  font-family: monospace;
+  font-weight: bold;
+}
+
+@media (max-width: 800px) {
+  .vp-project-grid {
+    grid-template-columns: 1fr;
+  }
+}
     
   </style>
 </head>
@@ -1491,104 +1675,97 @@ a {
   </h2>
 
   <div class="section-content">
-    <div class="engineering-grid">
+    <div class="vp-project-grid">
 
-      <article class="engineering-card">
+      <article class="vp-project-card">
 
-        <!-- Cover images: use the existing automatic slideshow script -->
-        <div class="engineering-cover project-carousel"
-             aria-label="MATLAB music player screenshots">
-
+        <!-- Front: images and short introduction -->
+        <div class="vp-project-cover project-carousel">
           <div class="carousel-slide">
             <img
               src="assets/img/matlab-player-playback.png"
-              alt="MATLAB music player during playback with audio waveforms">
+              alt="MATLAB music player displaying audio waveforms">
           </div>
 
           <div class="carousel-slide" hidden>
             <img
               src="assets/img/matlab-player-interface.png"
-              alt="MATLAB music player interface and playback controls">
+              alt="MATLAB music player interface">
           </div>
         </div>
 
-        <div class="engineering-card-body">
-          <span class="engineering-category">
-            Audio Processing · MATLAB
-          </span>
-
+        <div class="vp-project-front">
           <h3>MATLAB Music Player</h3>
 
-          <p class="engineering-meta">
-            Computer Simulation Coursework<br>
-            Individual Project · 2024
+          <p class="vp-project-meta">
+            Individual Coursework · 2024
           </p>
 
-          <p class="engineering-summary">
-            Developed a desktop music player with playlist management,
-            playback controls, audio effects and signal visualisation
-            using MATLAB App Designer.
+          <p>
+            A desktop music player with audio effects
+            and signal visualisation, developed using
+            MATLAB App Designer.
           </p>
-
-          <div class="engineering-author">
-            <strong>Yuhan Wei</strong>
-            <!-- Add the confirmed project mark here later. -->
-          </div>
-
-          <details class="engineering-details">
-            <summary>
-              <span>My Contribution &amp; Features</span>
-              <span class="engineering-expand" aria-hidden="true">+</span>
-            </summary>
-
-            <div class="engineering-details-content">
-              <h4>My Contribution</h4>
-              <ul>
-                <li>
-                  Designed the interface and implemented playlist
-                  management and playback callbacks.
-                </li>
-                <li>
-                  Connected playback progress and time displays
-                  to timer-driven updates.
-                </li>
-                <li>
-                  Integrated audio-processing functions and signal
-                  visualisation, and prepared the coursework
-                  report and presentation.
-                </li>
-              </ul>
-
-              <h4>Key Features</h4>
-              <ul>
-                <li>
-                  Audio import and removal, play/pause,
-                  stop and track switching.
-                </li>
-                <li>
-                  Volume adjustment, playback-position seeking
-                  and playback-speed controls.
-                </li>
-                <li>
-                  Time-domain waveforms, FFT-based spectrum
-                  and a peak-based envelope display.
-                </li>
-                <li>
-                  A delay effect and basic stereo vocal reduction.
-                </li>
-              </ul>
-
-              <p class="engineering-note">
-                Vocal reduction uses channel subtraction and filtering;
-                it is not an AI source-separation system.
-              </p>
-            </div>
-          </details>
-
         </div>
+
+        <!-- Three dots open an overlay within the same card -->
+        <details class="vp-project-details">
+          <summary aria-label="Open or close project details">
+            <span class="vp-open-icon" aria-hidden="true">⋮</span>
+            <span class="vp-close-icon" aria-hidden="true">×</span>
+          </summary>
+
+          <div class="vp-project-panel" tabindex="0">
+            <h3>MATLAB Music Player</h3>
+
+            <p class="vp-project-meta">
+              Computer Simulation Coursework<br>
+              Yuhan Wei · Individual Project
+            </p>
+
+            <p>
+              Developed a desktop application integrating
+              playlist management, playback controls,
+              audio processing and signal visualisation.
+            </p>
+
+            <h4>My Contribution</h4>
+            <ul>
+              <li>
+                Designed the App Designer interface and
+                implemented playlist and playback callbacks.
+              </li>
+              <li>
+                Connected playback progress and timing
+                to timer-driven signal displays.
+              </li>
+              <li>
+                Integrated audio effects and prepared
+                the coursework report and presentation.
+              </li>
+            </ul>
+
+            <h4>Key Features</h4>
+            <ul>
+              <li>Audio import, removal and track switching.</li>
+              <li>Playback, volume, speed and progress controls.</li>
+              <li>Waveform, FFT spectrum and envelope displays.</li>
+              <li>Delay effect and basic stereo vocal reduction.</li>
+            </ul>
+
+            <a class="vp-code-link"
+               href="https://github.com/yuhanwei08/matlab-music-player"
+               target="_blank"
+               rel="noopener noreferrer">
+              <span aria-hidden="true">&lt;/&gt;</span>
+              View Code
+            </a>
+          </div>
+        </details>
+
       </article>
 
-      <!-- Add future engineering project cards here. -->
+      <!-- Future project cards go here. -->
 
     </div>
   </div>
