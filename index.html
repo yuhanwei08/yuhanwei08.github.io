@@ -8,7 +8,7 @@
   <meta name="author" content="Yuhan Wei">
   <meta name="description"
         content="Yuhan Wei's portfolio: robotics, education, skills and projects.">
-  <meta name="theme-color" content="#00796b">
+ <meta name="theme-color" content="#52dc88">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -955,6 +955,116 @@ footer {
 #research .github-link svg path {
   fill: currentColor !important;
   stroke: none !important;
+}
+    /* Bright mint and fresh green palette */
+:root {
+  --green: #087f50;
+  --dark-green: #075c3a;
+  --text: #243d30;
+  --muted: #52695b;
+  --background: #f5fff7;
+  --border: #d2edda;
+  --light-green: #ddf9e7;
+  --bright-green: #52dc88;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+}
+
+/* Bright homepage gradient */
+.hero {
+  background: linear-gradient(120deg, #a0f4b8, #47d98b);
+  color: var(--dark-green);
+}
+
+.hero-university {
+  color: #164f34;
+}
+
+.hero .button {
+  border-color: var(--dark-green);
+  color: var(--dark-green);
+}
+
+.hero .button.primary {
+  background: white;
+}
+
+.hero .button:hover {
+  background: var(--dark-green);
+  color: white;
+}
+
+/* Bright section banners with dark text */
+.section-title {
+  background: var(--bright-green);
+  color: var(--dark-green);
+}
+
+/* Sidebar */
+.avatar {
+  background: #ddf9e7;
+  border-color: #9debb7;
+  color: var(--dark-green);
+}
+
+.sidebar nav a {
+  color: #355841;
+}
+
+.sidebar nav a:hover {
+  background: #ddf9e7;
+  border-left-color: #20b865;
+  color: var(--dark-green);
+}
+
+/* Project headings and image labels */
+.card h3,
+#research .card h3 {
+  color: var(--dark-green);
+}
+
+.gallery-category {
+  background: #9aefb3;
+  color: var(--dark-green);
+}
+
+.project-description {
+  color: #4b6053;
+}
+
+/* Skills and language bars */
+.skill-list span {
+  background: #e8ffed;
+  border-color: #b5ebc5;
+  color: var(--dark-green);
+}
+
+.language-scale span {
+  background: #dfefe3;
+}
+
+.language-scale .filled {
+  background: #20b865;
+}
+
+/* Links and GitHub icon */
+a {
+  color: var(--green);
+}
+
+#research .github-link,
+.project-links a.resource-icon {
+  background: #ddf9e7;
+  color: var(--dark-green);
+}
+
+#research .github-link:hover,
+.project-links a.resource-icon:hover {
+  background: #9aefb3;
+  color: var(--dark-green);
 }
   </style>
 </head>
