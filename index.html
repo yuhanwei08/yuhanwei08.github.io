@@ -723,56 +723,21 @@
   </div>
 
   <div class="project-carousel"
-       role="region"
-       aria-roledescription="carousel"
        aria-label="Chrysanthemum project images">
 
-    <a class="carousel-slide"
-       href="assets/img/chrysanthemum-preview.png"
-       target="_blank" rel="noopener noreferrer">
+    <div class="carousel-slide">
       <img src="assets/img/chrysanthemum-preview.png"
-           alt="English upload interface of the chrysanthemum recognition system"
-           loading="lazy">
-    </a>
+           alt="English interface of the chrysanthemum recognition system">
+    </div>
 
-    <a class="carousel-slide"
-       href="assets/img/chrysanthemum-loss.png"
-       target="_blank" rel="noopener noreferrer"
-       hidden>
+    <div class="carousel-slide" hidden>
       <img src="assets/img/chrysanthemum-loss.png"
-           alt="Training and validation loss curves with the selected checkpoint at epoch 10"
-           loading="lazy">
-    </a>
+           alt="Training and validation loss curves">
+    </div>
 
-    <a class="carousel-slide"
-       href="assets/img/chrysanthemum-accuracy.png"
-       target="_blank" rel="noopener noreferrer"
-       hidden>
+    <div class="carousel-slide" hidden>
       <img src="assets/img/chrysanthemum-accuracy.png"
-           alt="Training and validation accuracy curves showing a best validation accuracy of 95.38 percent"
-           loading="lazy">
-    </a>
-
-    <div class="carousel-controls" hidden>
-      <button type="button" class="carousel-prev"
-              aria-label="Previous image">‹</button>
-
-      <div class="carousel-dots" aria-label="Choose an image">
-        <button type="button" class="carousel-dot"
-                aria-label="Show interface image"
-                aria-current="true"></button>
-        <button type="button" class="carousel-dot"
-                aria-label="Show loss curves"></button>
-        <button type="button" class="carousel-dot"
-                aria-label="Show accuracy curves"></button>
-      </div>
-
-      <button type="button" class="carousel-next"
-              aria-label="Next image">›</button>
-
-      <button type="button" class="carousel-toggle">
-        Pause
-      </button>
+           alt="Training and validation accuracy curves">
     </div>
 
     <p class="carousel-caption">
@@ -781,12 +746,10 @@
   </div>
 
   <figcaption class="gallery-note">
-    Click an image to enlarge.
     Chart labels were translated into English using AI image editing;
     original figures are retained in the dissertation.
   </figcaption>
 </figure>
-
             <div style="flex:1 1 280px; min-width:0;">
               <span class="date">
                 Undergraduate Dissertation · Individual Project · Completed
@@ -987,134 +950,50 @@
   </main>
 
   <script>
-    document.querySelectorAll('.mobile-menu a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        document.querySelector('.mobile-menu').open = false;
-      });
+  // Close the mobile menu after selecting a section.
+  document.querySelectorAll('.mobile-menu a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      document.querySelector('.mobile-menu').open = false;
     });
+  });
+
+  // Automatically cycle through project images every four seconds.
   document.querySelectorAll('.project-carousel').forEach(function (carousel) {
-  const slides = Array.from(
-    carousel.querySelectorAll('.carousel-slide')
-  );
-  const dots = Array.from(
-    carousel.querySelectorAll('.carousel-dot')
-  );
-  const controls = carousel.querySelector('.carousel-controls');
-  const caption = carousel.querySelector('.carousel-caption');
-  const toggle = carousel.querySelector('.carousel-toggle');
-
-  const captions = [
-    'English interface for image upload and recognition.',
-    'Training and validation loss; selected checkpoint at epoch 10.',
-    'Training and validation accuracy; best validation accuracy: 95.38%.'
-  ];
-
-  const reducedMotion = window.matchMedia(
-    '(prefers-reduced-motion: reduce)'
-  );
-
-  let current = 0;
-  let timer = null;
-  let paused = reducedMotion.matches;
-  let pointerInside = false;
-
-  controls.hidden = false;
-
-  function showSlide(index) {
-    current = (index + slides.length) % slides.length;
-
-    slides.forEach(function (slide, i) {
-      slide.hidden = i !== current;
-    });
-
-    dots.forEach(function (dot, i) {
-      if (i === current) {
-        dot.setAttribute('aria-current', 'true');
-      } else {
-        dot.removeAttribute('aria-current');
-      }
-    });
-
-    caption.textContent = captions[current];
-  }
-
-  function stopTimer() {
-    window.clearInterval(timer);
-    timer = null;
-  }
-
-  function updatePlayback() {
-    stopTimer();
-    toggle.textContent = paused ? 'Play' : 'Pause';
-    toggle.setAttribute(
-      'aria-label',
-      paused ? 'Start image slideshow' : 'Pause image slideshow'
+    const slides = Array.from(
+      carousel.querySelectorAll('.carousel-slide')
     );
 
-    const focusInside = carousel.contains(document.activeElement);
+    const caption = carousel.querySelector('.carousel-caption');
 
-    if (!paused && !pointerInside && !focusInside && !document.hidden) {
-      timer = window.setInterval(function () {
-        showSlide(current + 1);
+    const captions = [
+      'English interface for image upload and recognition.',
+      'Training and validation loss; selected checkpoint at epoch 10.',
+      'Training and validation accuracy; best validation accuracy: 95.38%.'
+    ];
+
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach(function (slide, i) {
+        slide.hidden = i !== index;
+      });
+
+      if (caption) {
+        caption.textContent = captions[index] || '';
+      }
+    }
+
+    if (slides.length === 0) return;
+
+    showSlide(current);
+
+    if (slides.length > 1) {
+      window.setInterval(function () {
+        current = (current + 1) % slides.length;
+        showSlide(current);
       }, 4000);
     }
-  }
-
-  function selectSlide(index) {
-    showSlide(index);
-    paused = true;
-    updatePlayback();
-  }
-
-  carousel.querySelector('.carousel-prev')
-    .addEventListener('click', function () {
-      selectSlide(current - 1);
-    });
-
-  carousel.querySelector('.carousel-next')
-    .addEventListener('click', function () {
-      selectSlide(current + 1);
-    });
-
-  dots.forEach(function (dot, i) {
-    dot.addEventListener('click', function () {
-      selectSlide(i);
-    });
   });
-
-  toggle.addEventListener('click', function () {
-    paused = !paused;
-    updatePlayback();
-  });
-
-  carousel.addEventListener('mouseenter', function () {
-    pointerInside = true;
-    updatePlayback();
-  });
-
-  carousel.addEventListener('mouseleave', function () {
-    pointerInside = false;
-    updatePlayback();
-  });
-
-  carousel.addEventListener('focusin', updatePlayback);
-
-  carousel.addEventListener('focusout', function () {
-    window.setTimeout(updatePlayback, 0);
-  });
-
-  document.addEventListener('visibilitychange', updatePlayback);
-
-  reducedMotion.addEventListener('change', function () {
-    if (reducedMotion.matches) {
-      paused = true;
-      updatePlayback();
-    }
-  });
-
-  showSlide(0);
-  updatePlayback();
-});
-  </script>
+</script>
 </body>
 </html>
