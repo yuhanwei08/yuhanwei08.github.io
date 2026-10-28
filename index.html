@@ -1693,9 +1693,6 @@ a {
   white-space: nowrap;
 }
 
-#poultry-robot-project .vp-project-front > p {
-  margin-bottom: 0;
-}
 
     /* Match the music player title colour; keep the existing size */
 #research .card h3 {
@@ -1779,6 +1776,26 @@ a {
   font-size: 18px;
   line-height: 1.5;
 }
+    #poultry-robot-project .project-authors .poultry-coauthors {
+  color: #4d6257;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: 400;
+}
+
+    /* Match the MATLAB project introduction */
+#research .project-description {
+  font-family: inherit;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0 0 16px;
+}
+
+
     
   </style>
 </head>
@@ -2056,25 +2073,24 @@ a {
   </h3>
 
   <div class="poultry-author-score-row">
+    <p class="vp-project-meta project-authors">
+      <strong>Yuhan Wei</strong>,
+      <span class="poultry-coauthors">Jinru Liu, Jiali Ma</span>
+    </p>
+
+    <span class="poultry-score">92/100</span>
+  </div>
+
   <p class="vp-project-meta project-authors">
-    <strong>Yuhan Wei</strong>, Jinru Liu, Jiali Ma
+    Nov 2024 – Jan 2025
   </p>
 
-  <span class="poultry-score">92/100</span>
+  <p class="poultry-front-description">
+    An STM32 and OpenMV robot combining line following,
+    visual detection and environmental monitoring.
+  </p>
 </div>
 
-<p class="vp-project-meta project-authors">
-  Nov 2024 – Jan 2025
-</p>
-  
- 
-</div>
-
-    <p class="poultry-front-description">
-      An STM32 and OpenMV robot combining line following,
-      visual detection and environmental monitoring.
-    </p>
-  </div>
 
   <details class="vp-project-details">
     <summary aria-label="Open or close poultry inspection robot details">
