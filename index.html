@@ -1720,7 +1720,40 @@ a {
   color: #000000;
 }
 
+    /* Italic author names for all three projects */
+.project-author-row.project-authors,
+.vp-project-card p.project-authors {
+  font-family: "Crimson Pro", Georgia, serif;
+  font-style: italic;
+  color: #000000;
+}
 
+.project-author-row.project-authors strong,
+.vp-project-card p.project-authors strong {
+  font-style: italic;
+  font-weight: 700;
+  color: #000000;
+}
+
+    /* Authors on the left, score on the far right */
+#poultry-robot-project .poultry-author-score-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+#poultry-robot-project .poultry-author-score-row p {
+  margin: 0;
+  min-width: 0;
+}
+
+#poultry-robot-project .poultry-author-score-row .poultry-score {
+  flex-shrink: 0;
+  margin-left: auto;
+  font-style: italic;
+}
     
   </style>
 </head>
@@ -2004,17 +2037,19 @@ a {
     Computer Vision-Based Poultry Farm Inspection Robot
   </h3>
 
+  <div class="poultry-author-score-row">
   <p class="vp-project-meta project-authors">
-  <strong>Yuhan Wei</strong>, Jinru Liu, Jiali Ma
+    <strong>Yuhan Wei</strong>, Jinru Liu, Jiali Ma
+  </p>
+
+  <span class="poultry-score">92/100</span>
+</div>
+
+<p class="vp-project-meta project-authors">
+  Nov 2024 – Jan 2025
 </p>
-
-  <p class="vp-project-meta">
-    Nov 2024 – Jan 2025
-  </p>
-
-  <p>
-    <span class="poultry-score">92/100</span>
-  </p>
+  
+ 
 </div>
 
     <p>
