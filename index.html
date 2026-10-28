@@ -1646,6 +1646,57 @@ a {
   margin-right: 0;
 }
 
+    
+/* Applies only to the poultry inspection robot card. */
+#poultry-robot-project {
+  height: auto;
+  min-height: 440px;
+}
+
+#poultry-robot-project .vp-project-front h3,
+#poultry-robot-project .vp-project-panel h3 {
+  white-space: normal;
+  line-height: 1.2;
+}
+
+#poultry-robot-project .poultry-video-cover {
+  padding: 8px;
+  background: #edf6f1;
+}
+
+#poultry-robot-project .poultry-cover-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #edf6f1;
+}
+
+#poultry-robot-project .poultry-meta-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin-bottom: 12px;
+}
+
+#poultry-robot-project .poultry-meta-row .vp-project-meta {
+  margin: 0;
+}
+
+#poultry-robot-project .poultry-score {
+  color: #c62828;
+  font-size: 18px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+#poultry-robot-project .vp-project-front > p {
+  margin-bottom: 0;
+}
+
+
 
     
   </style>
@@ -1902,6 +1953,135 @@ a {
         </details>
 
       </article>
+
+      
+<!-- Add this article inside the existing .vp-project-grid. -->
+<article class="vp-project-card"
+         id="poultry-robot-project"
+         aria-labelledby="poultry-project-title">
+
+  <div class="vp-project-cover poultry-video-cover">
+    <video class="poultry-cover-video"
+           autoplay muted loop playsinline
+           preload="metadata"
+           poster="assets/img/poultry-robot-poster.jpg"
+           aria-label="Indoor line-following demonstration of the poultry inspection robot">
+      <source src="assets/videos/poultry-robot-line-following.mp4"
+              type="video/mp4">
+      Your browser does not support embedded video.
+    </video>
+  </div>
+
+  <div class="vp-project-front">
+    <h3 id="poultry-project-title">
+      Vision-Based Poultry Inspection Robot
+    </h3>
+
+    <div class="poultry-meta-row">
+      <p class="vp-project-meta">Team Coursework · 2024</p>
+      <span class="poultry-score"
+            aria-label="Mark: 92 out of 100">92/100</span>
+    </div>
+
+    <p>
+      An STM32 and OpenMV robot combining line following,
+      visual detection and environmental monitoring.
+    </p>
+  </div>
+
+  <details class="vp-project-details">
+    <summary aria-label="Open or close poultry inspection robot details">
+      <span class="vp-open-icon" aria-hidden="true">⋮</span>
+      <span class="vp-close-icon" aria-hidden="true">×</span>
+    </summary>
+
+    <div class="vp-project-panel" tabindex="0">
+      <h3>Vision-Based Poultry Inspection Robot</h3>
+      <p class="vp-project-meta">
+        Integrated Electronic Systems Design<br>
+        Team of three · Nanjing Agricultural University · 2024<br>
+        <span class="poultry-score">92/100</span>
+      </p>
+
+      <p>
+        Developed a three-person coursework prototype for poultry-house
+        inspection, combining STM32 motion control, OpenMV vision and
+        environmental sensing. The system was demonstrated on a marked
+        indoor course, with a model chicken used for the vision demonstration.
+      </p>
+
+      <h4>My Contribution</h4>
+      <ul>
+        <li>
+          Designed the overall system architecture and inspection route,
+          and connected and debugged the robot hardware.
+        </li>
+        <li>
+          Implemented four-sensor line following, PWM motor-speed control
+          and ultrasonic obstacle-avoidance functions.
+        </li>
+        <li>
+          Adapted and refined OpenMV image acquisition and processing
+          code for model-chicken detection.
+        </li>
+        <li>
+          Tested the inspection route and adjusted control delays,
+          sensor sensitivity and hardware connections to improve cornering.
+        </li>
+      </ul>
+
+      <h4>Key Features</h4>
+      <ul>
+        <li>
+          Black-line navigation with straight-line travel and turning,
+          using four reflectance sensors and PWM motor control.
+        </li>
+        <li>
+          Ultrasonic distance sensing for obstacle avoidance.
+        </li>
+        <li>
+          OpenMV vision for model-chicken detection and image-coordinate output.
+        </li>
+        <li>
+          Temperature, humidity, CO₂, light and thermistor readings,
+          with an OLED display and Bluetooth/serial communication.
+        </li>
+      </ul>
+
+      <h4>Debugging &amp; Improvement</h4>
+      <p>
+        Early tests showed missed right-angle turns and departures from
+        the marked route. I investigated control delays and unstable
+        power connections, secured the breadboard wiring, reorganised
+        delay placement and tuned the line-sensor sensitivity until
+        the robot could complete the route.
+      </p>
+
+      <h4>Team Collaboration</h4>
+      <p>
+        My teammates focused on environmental sensing, OLED data display
+        and communication modules, and contributed to hardware assembly
+        and system testing.
+      </p>
+
+      <h4>Outcome &amp; Reflection</h4>
+      <p>
+        The team demonstrated line following, an OpenMV vision module
+        and environmental sensor readings. This work developed my
+        practical skills in embedded C, MicroPython and hardware–software
+        integration. Power-supply stability, sensor sensitivity and
+        communication reliability remain areas for improvement.
+      </p>
+
+      <h4>Technologies</h4>
+      <p>
+        STM32F103 · Embedded C · OpenMV · MicroPython · PWM ·
+        Reflectance Sensors · Ultrasonic Sensing · OLED · Bluetooth/UART
+      </p>
+    </div>
+  </details>
+</article>
+
 
       <!-- Future project cards go here. -->
 
