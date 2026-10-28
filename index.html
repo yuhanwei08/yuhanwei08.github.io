@@ -1855,6 +1855,130 @@ a {
 .sidebar nav a {
   font-size: 24px;
 }
+
+    /* SRT research project layout */
+#srt-sow-piglet-project .srt-layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+#srt-sow-piglet-project .srt-gallery {
+  flex: 0 1 300px;
+  margin: 0;
+}
+
+#srt-sow-piglet-project .srt-content {
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+/* Project title */
+#srt-sow-piglet-project h3 {
+  margin: 0 0 16px;
+  color: var(--green);
+  font-size: 28px;
+  line-height: 1.3;
+}
+
+/* Authors and project level */
+#srt-sow-piglet-project .srt-author-level-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 20px;
+  margin-bottom: 8px;
+}
+
+#srt-sow-piglet-project p.srt-authors,
+#srt-sow-piglet-project p.srt-dates {
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000000;
+}
+
+#srt-sow-piglet-project p.srt-authors {
+  flex: 1 1 260px;
+  margin: 0;
+}
+
+#srt-sow-piglet-project .srt-coauthors {
+  color: #4d6257;
+}
+
+#srt-sow-piglet-project .srt-project-level {
+  margin-left: auto;
+  color: #c62828;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+#srt-sow-piglet-project p.srt-dates {
+  margin: 0 0 16px;
+}
+
+/* Introduction and detail text */
+#srt-sow-piglet-project p.srt-description,
+#srt-sow-piglet-project .srt-details p,
+#srt-sow-piglet-project .srt-details ul,
+#srt-sow-piglet-project .srt-details li {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+#srt-sow-piglet-project p.srt-description,
+#srt-sow-piglet-project .srt-details p {
+  margin: 0 0 16px;
+}
+
+/* Expandable details */
+#srt-sow-piglet-project .srt-details summary {
+  margin-top: 12px;
+  color: var(--green);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#srt-sow-piglet-project .srt-details summary:focus-visible {
+  outline: 3px solid #d99b35;
+  outline-offset: 4px;
+}
+
+/* Detail subheadings */
+#srt-sow-piglet-project h4 {
+  margin: 20px 0 8px;
+  color: var(--dark-green);
+  font-size: 24px;
+}
+
+#srt-sow-piglet-project .srt-details ul {
+  padding-left: 24px;
+  margin: 0 0 16px;
+}
+
+#srt-sow-piglet-project .srt-details li {
+  margin-bottom: 10px;
+}
+
+/* Mobile layout */
+@media (max-width: 760px) {
+  #srt-sow-piglet-project .srt-gallery {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+
+
+
     
   </style>
 </head>
@@ -2009,6 +2133,135 @@ a {
         </article>
       </div>
     </section>
+
+    <article class="card"
+         id="srt-sow-piglet-project"
+         aria-labelledby="srt-project-title">
+
+  <div class="srt-layout">
+    
+    <!-- Project information -->
+    <div class="srt-content">
+
+      <h3 id="srt-project-title">
+        Development of a Behavioural Phenotyping System for
+        Lactating Sows and Piglets Using Inspection Robots
+      </h3>
+
+      <div class="srt-author-level-row">
+
+        <p class="srt-authors">
+          <span class="srt-coauthors">Tangchun Gu, Tong Zhou,</span>
+          <span>Yuhan Wei</span><span class="srt-coauthors">, Jiaxin Ouyang</span>
+        </p>
+
+        <span class="srt-project-level">
+          National-Level Project
+        </span>
+
+      </div>
+
+      <p class="srt-dates">
+        Jan 2024 – Dec 2024
+      </p>
+
+      <p class="srt-description">
+        Contributed to a national-level undergraduate research project
+        developing a robot-based system for non-contact monitoring of
+        lactating sows and piglets, aiming to reduce reliance on manual
+        inspection. I helped design the data acquisition platform and
+        prepare an annotated dataset covering four sow postures and
+        individual piglets. My research focused on comparing NanoDet-Plus
+        and YOLOv8 detectors and using TensorRT to deploy a lightweight
+        model on Jetson Nano. The work connected farm data collection
+        with model evaluation and edge deployment to support automated
+        livestock behaviour monitoring.
+      </p>
+
+      <!-- Expanded details -->
+      <details class="srt-details">
+        <summary>Project Details</summary>
+
+        <h4>My Contribution</h4>
+
+        <ul>
+          <li>
+            Contributed to the robot-based data acquisition platform
+            and collected sow and piglet videos for subsequent
+            image analysis.
+          </li>
+
+          <li>
+            Helped construct a dataset of 6,120 annotated images
+            covering four sow postures—standing, sitting, lateral
+            lying and sternal lying—and individual piglets.
+          </li>
+
+          <li>
+            Compared NanoDet-Plus and YOLOv8 detectors, considering
+            detection quality, model complexity and inference speed
+            to identify a suitable model for edge deployment.
+          </li>
+
+          <li>
+            Applied TensorRT acceleration to deploy and test
+            YOLOv8n on Jetson Nano, and analysed inspection data
+            to explore sow-posture patterns.
+          </li>
+        </ul>
+
+        <h4>Research Approach</h4>
+
+        <p>
+          The work linked robot-based video collection with image
+          annotation, model training and evaluation, and edge-device
+          deployment. The reported dataset contained 4,896 training
+          images, 612 validation images and 612 test images.
+        </p>
+
+        <p>
+          Model selection considered both detection performance and
+          computational requirements, reflecting the limited resources
+          available on the robot-mounted Jetson Nano.
+        </p>
+
+        <h4>Team Collaboration</h4>
+
+        <p>
+          Other team members contributed to piglet group-behaviour
+          recognition using temporal models, web-platform development
+          and shared data preparation. These were collaborative system
+          outcomes rather than my sole implementations.
+        </p>
+
+        <h4>Reflection &amp; Further Work</h4>
+
+        <p>
+          The project strengthened my experience in dataset preparation,
+          experimental comparison and edge deployment. It highlighted
+          the importance of annotation consistency, occlusion handling
+          and evaluating detection quality alongside inference speed.
+        </p>
+
+        <p>
+          Further work could include documenting the complete deployment
+          configuration, validating on additional farms and lighting
+          conditions, and examining possible temporal or animal-level
+          overlap between dataset splits.
+        </p>
+
+        <h4>Technologies</h4>
+
+        <p>
+          Python · OpenCV · LabelImg · NanoDet-Plus ·
+          YOLOv8 · TensorRT · NVIDIA Jetson Nano
+        </p>
+
+      </details>
+
+    </div>
+  </div>
+</article>
 
     <section id="projects" aria-labelledby="projects-title">
   <h2 id="projects-title" class="section-title">
