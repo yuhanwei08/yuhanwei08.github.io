@@ -1795,7 +1795,51 @@ a {
   margin: 0 0 16px;
 }
 
+    /* Project titles: front cards and expanded details */
+#research .card h3,
+#projects .vp-project-front h3,
+#projects .vp-project-panel h3 {
+  font-size: 28px;
+}
 
+/* Subheadings in expanded details */
+#projects .vp-project-panel h4 {
+  font-size: 24px;
+}
+
+/* Project introductions and detail text */
+#research .project-description,
+#projects .vp-project-front p,
+#projects .vp-project-panel p,
+#projects .vp-project-panel ul,
+#projects .vp-project-panel li,
+#poultry-robot-project .poultry-front-description {
+  font-size: 20px;
+}
+
+/* Authors and dates */
+#research .project-author-row.project-authors,
+#projects .vp-project-card p.project-authors {
+  font-size: 20px;
+}
+
+#research .project-author-row.project-authors strong,
+#projects .vp-project-card p.project-authors strong,
+#poultry-robot-project .project-authors .poultry-coauthors {
+  font-size: inherit;
+}
+
+/* Allow longer project titles to wrap */
+#projects .vp-project-front h3 {
+  white-space: normal;
+}
+
+/* Let cards expand to fit the larger text */
+#projects .vp-project-card {
+  height: auto;
+  min-height: 440px;
+}
+    
     
   </style>
 </head>
