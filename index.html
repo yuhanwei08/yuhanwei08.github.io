@@ -2074,6 +2074,68 @@ a {
   }
 }
 
+    /* Align both research projects */
+#research .project-gallery {
+  flex: 0 1 340px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+#srt-sow-piglet-project .srt-layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+#srt-sow-piglet-project .srt-image-space {
+  flex: 0 1 340px;
+  width: 100%;
+  min-height: 220px;
+  margin: 0;
+}
+
+#srt-sow-piglet-project .srt-content {
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+#srt-sow-piglet-project h3 {
+  color: var(--dark-green);
+  font-size: 28px;
+}
+
+#srt-sow-piglet-project p.srt-description,
+#research .project-description {
+  font-family: inherit;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0;
+}
+
+/* Dates use the same formatting in both sections */
+#research p.project-date,
+#projects p.project-date {
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000;
+  margin: 0 0 16px;
+}
+
+@media (max-width: 760px) {
+  #research .project-gallery,
+  #srt-sow-piglet-project .srt-image-space {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+}
     
   </style>
 </head>
@@ -2171,7 +2233,13 @@ a {
   <div class="srt-layout">
 
     <!-- Space reserved for future project images -->
-    <div class="srt-image-space" aria-hidden="true"></div>
+    <figure class="project-gallery srt-image-space">
+  <div class="gallery-category">
+    Computer Vision / Edge AI
+  </div>
+
+  <!-- Project images will be added here later -->
+</figure>
 
     <!-- Project information -->
     <div class="srt-content">
@@ -2269,6 +2337,8 @@ a {
   </a>
 </div>
 
+              <p class="project-date">Feb 2026 – Jun 2026</p>
+              
               <p class="project-description">
                 Developed an eight-class flower recognition system using EfficientNet-B3 and transfer learning. Built a dataset of 1,169 images and integrated the trained model into a Flask web application supporting image upload, preview, and top-three predictions with confidence scores. The saved model achieved 95.38% validation accuracy. 
               </p>
@@ -2314,6 +2384,8 @@ a {
   <p class="vp-project-meta project-authors">
   <strong>Yuhan Wei</strong>
 </p>
+          
+          <p class="project-date">Jun 2026</p>
 
   <p>
     A desktop music player with audio effects
