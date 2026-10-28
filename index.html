@@ -1688,7 +1688,8 @@ a {
 #poultry-robot-project .poultry-score {
   color: #c62828;
   font-size: 18px;
-  font-weight: 700;
+  font-style: italic;
+  font-weight: 400;
   white-space: nowrap;
 }
 
@@ -1696,6 +1697,28 @@ a {
   margin-bottom: 0;
 }
 
+    /* Match the music player title colour; keep the existing size */
+#research .card h3 {
+  color: var(--green);
+}
+
+/* Shared author typography */
+.project-author-row.project-authors,
+.vp-project-card p.project-authors {
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  color: #000000;
+}
+
+.project-author-row.project-authors strong,
+.vp-project-card p.project-authors strong {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  color: #000000;
+}
 
 
     
@@ -1828,7 +1851,7 @@ a {
 
               <h3>CNN-based Chrysanthemum Recognition System</h3>
 
-              <div class="project-author-row">
+              <div class="project-author-row project-authors">
   <strong>Yuhan Wei</strong>
 
   <a class="github-link"
@@ -1882,23 +1905,21 @@ a {
         </div>
 
         <div class="vp-project-front">
-          <h3>MATLAB-based Music Player</h3>
+  <h3>MATLAB-based Music Player</h3>
 
-          <p class="vp-project-meta">
-            <strong>Yuhan Wei</strong>, Jinru Liu, Jiali Ma
-          </p>
-          <p class="vp-project-meta">
-            Nov 2024 – Jan 2025
-          </p>
-          <p>
-            <span class="poultry-score">92/100</span>
-          </p>
+  <p class="vp-project-meta project-authors">
+  <strong>Yuhan Wei</strong>
+</p>
 
-          <p>
-            A desktop music player with audio effects
-            and signal visualisation.
-          </p>
-        </div>
+  <p class="vp-project-meta">
+    Individual Coursework · 2024
+  </p>
+
+  <p>
+    A desktop music player with audio effects
+    and signal visualisation.
+  </p>
+</div>
 
         <!-- Three dots open an overlay within the same card -->
         <details class="vp-project-details">
@@ -1910,9 +1931,9 @@ a {
           <div class="vp-project-panel" tabindex="0">
             <h3>MATLAB-based Music Player</h3>
 
-            <p class="vp-project-meta">
-              Yuhan Wei
-            </p>
+           <p class="vp-project-meta project-authors">
+  <strong>Yuhan Wei</strong>
+</p>
 
             <p>
               Developed a desktop application integrating
@@ -1978,16 +1999,23 @@ a {
     </video>
   </div>
 
-  <div class="vp-project-front">
-    <h3 id="poultry-project-title">
-      Computer Vision-Based Poultry Farm Inspection Robot
-    </h3>
+<div class="vp-project-front">
+  <h3 id="poultry-project-title">
+    Computer Vision-Based Poultry Farm Inspection Robot
+  </h3>
 
-    <div class="poultry-meta-row">
-      <p class="vp-project-meta">Team Coursework · 2024</p>
-      <span class="poultry-score"
-            aria-label="Mark: 92 out of 100">92/100</span>
-    </div>
+  <p class="vp-project-meta project-authors">
+  <strong>Yuhan Wei</strong>, Jinru Liu, Jiali Ma
+</p>
+
+  <p class="vp-project-meta">
+    Nov 2024 – Jan 2025
+  </p>
+
+  <p>
+    <span class="poultry-score">92/100</span>
+  </p>
+</div>
 
     <p>
       An STM32 and OpenMV robot combining line following,
@@ -2002,12 +2030,10 @@ a {
     </summary>
 
     <div class="vp-project-panel" tabindex="0">
-      <h3>Vision-Based Poultry Inspection Robot</h3>
-      <p class="vp-project-meta">
-        Integrated Electronic Systems Design<br>
-        Team of three · Nanjing Agricultural University · 2024<br>
-        <span class="poultry-score">92/100</span>
-      </p>
+      <h3>
+  Computer Vision-Based Poultry Farm Inspection Robot
+</h3>
+    
 
       <p>
         Developed a three-person coursework prototype for poultry-house
