@@ -2758,6 +2758,52 @@ img[src$="caged-chicken-robot-cover.jpg"] {
   }
 }
 
+    /* Match the other three project media frames */
+:is(
+  #sow-health-project,
+  #poultry-robot-project,
+  #egg-inspection-project
+) .vp-project-cover {
+  width: calc(100% - 40px);
+  max-width: 460px;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  margin: 24px auto 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+:is(
+  #sow-health-project,
+  #poultry-robot-project,
+  #egg-inspection-project
+) .carousel-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border: none;
+  border-radius: 0;
+  background: #fff;
+}
+
+:is(
+  #sow-health-project,
+  #poultry-robot-project,
+  #egg-inspection-project
+) .vp-project-cover :is(img, video) {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
+}
+
 
     
 
@@ -3908,6 +3954,36 @@ img[src$="caged-chicken-robot-cover.jpg"] {
   });
 })();
 </script>
+
+  <script>
+(() => {
+  const cards = document.querySelectorAll(
+    '#sow-health-project, #poultry-robot-project, #egg-inspection-project'
+  );
+
+  cards.forEach(card => {
+    const title = card.querySelector('.vp-project-front h3');
+    const details = card.querySelector('.vp-project-details');
+    const button = details?.querySelector('summary');
+    if (!title || !button) return;
+
+    function alignButton() {
+      button.style.top = details.open
+        ? '12px'
+        : `${title.getBoundingClientRect().top
+            - card.getBoundingClientRect().top
+            - card.clientTop}px`;
+    }
+
+    new ResizeObserver(alignButton).observe(card);
+    details.addEventListener('toggle', alignButton);
+    document.fonts.ready.then(alignButton);
+    alignButton();
+  });
+})();
+</script>
+
+  
 
 
   
