@@ -2491,6 +2491,91 @@ img[src$="caged-chicken-robot-cover.jpg"] {
 }
 
 
+    /* VC++ project */
+#vcpp-tourism-project {
+  position: relative;
+  height: auto;
+  min-height: 550px;
+}
+
+#vcpp-tourism-project .vcpp-cover {
+  width: calc(100% - 40px);
+  max-width: 460px;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  margin: 24px auto 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid #e4e9e6;
+  border-radius: 16px;
+  background: #fff;
+}
+
+#vcpp-tourism-project h3 {
+  font-size: 28px;
+}
+
+#vcpp-tourism-project h4 {
+  font-size: 24px;
+}
+
+#vcpp-tourism-project .vcpp-front-description,
+#vcpp-tourism-project .vp-project-panel p,
+#vcpp-tourism-project .vp-project-panel li {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+#vcpp-tourism-project .vcpp-front-description {
+  margin: 12px 0 0;
+}
+
+#vcpp-tourism-project .vcpp-author-score-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+#vcpp-tourism-project .project-authors,
+#vcpp-tourism-project .project-date,
+#vcpp-tourism-project .vcpp-score {
+  font-family: "Crimson Pro", serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+#vcpp-tourism-project .project-authors {
+  margin: 0;
+}
+
+#vcpp-tourism-project .vcpp-own-name {
+  color: #000;
+}
+
+#vcpp-tourism-project .vcpp-coauthors {
+  color: #4d6257;
+}
+
+#vcpp-tourism-project .vcpp-score {
+  margin-left: auto;
+  color: #c62828;
+  white-space: nowrap;
+}
+
+#vcpp-tourism-project .project-date {
+  margin: 8px 0 12px;
+}
+
+#vcpp-tourism-project .vp-project-details > summary {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+
     
 
 
@@ -2860,6 +2945,126 @@ img[src$="caged-chicken-robot-cover.jpg"] {
 
 </article>
 
+
+      <!-- VC++ Agricultural Tourism Project -->
+<article class="vp-project-card"
+         id="vcpp-tourism-project"
+         aria-labelledby="vcpp-tourism-title">
+
+  <!-- Cover space: English screenshots will be added later -->
+  <div class="vp-project-cover vcpp-cover"
+       aria-label="Project screenshot space">
+  </div>
+
+  <div class="vp-project-front">
+
+    <h3 id="vcpp-tourism-title">
+      Agricultural Tourism and Cultural Visit System
+    </h3>
+
+    <div class="vcpp-author-score-row">
+      <p class="vp-project-meta project-authors">
+        <span class="vcpp-own-name">Yuhan Wei</span><span
+          class="vcpp-coauthors">, Ziyue Ouyang</span>
+      </p>
+
+      <span class="vcpp-score">95/100</span>
+    </div>
+
+    <p class="project-date">Nov 2023 – Dec 2023</p>
+
+    <p class="vcpp-front-description">
+      A Windows desktop application combining visitor information,
+      multimedia content and administrative functions for an
+      agricultural tourism setting.
+    </p>
+
+  </div>
+
+  <details class="vp-project-details">
+
+    <summary aria-label="Open or close agricultural tourism project details">
+      <span class="vp-open-icon" aria-hidden="true">⋮</span>
+      <span class="vp-close-icon" aria-hidden="true">×</span>
+    </summary>
+
+    <div class="vp-project-panel" tabindex="0">
+
+      <h3>
+        Agricultural Tourism and Cultural Visit System
+      </h3>
+
+      <h4>Overview</h4>
+      <p>
+        Developed as a two-person team project for the VC++
+        Programming course at Nanjing Agricultural University,
+        this application brought visitor-facing information and
+        administrative functions into a Windows desktop interface.
+        The project used C++, MFC and a Microsoft Access database
+        connected through ODBC. As team leader, I contributed to
+        the requirements and detailed design documentation and
+        integrated the team's code.
+      </p>
+
+      <h4>My Contribution</h4>
+      <ul>
+        <li>
+          Coordinated the team's work and contributed to the
+          requirements analysis and detailed design documentation.
+        </li>
+        <li>
+          Integrated code from both team members and connected
+          the application's dialogs and functions.
+        </li>
+        <li>
+          Implemented administrator login and password checking,
+          together with ODBC data-source configuration.
+        </li>
+        <li>
+          Added loading progress, startup audio and audio-stop
+          functions, and picture controls.
+        </li>
+      </ul>
+
+      <h4>Key Features</h4>
+      <ul>
+        <li>
+          Separate visitor and administrator interfaces.
+        </li>
+        <li>
+          Database-backed record viewing and management.
+        </li>
+        <li>
+          Multimedia presentation with images, audio and video.
+        </li>
+        <li>
+          A reservation-entry interface for displaying visitor
+          booking information.
+        </li>
+      </ul>
+
+      <h4>Team Collaboration</h4>
+      <p>
+        My teammate contributed record creation, editing and
+        deletion, interface styling, video playback and password
+        visibility controls. We combined these functions with
+        my work through shared documentation and code integration.
+      </p>
+
+      <h4>Tools &amp; Technologies</h4>
+      <p>
+        C++, Visual C++, MFC, Microsoft Access, ODBC,
+        Windows Media Player ActiveX.
+      </p>
+
+    </div>
+  </details>
+
+</article>
+
+
+
+      
 
       <article class="vp-project-card"
          id="sow-health-project"
