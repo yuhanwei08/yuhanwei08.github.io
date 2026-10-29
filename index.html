@@ -2381,6 +2381,83 @@ img[src$="caged-chicken-robot-cover.jpg"] {
   font-weight: 400;
   white-space: nowrap;
 }
+    /* Sow health monitoring project */
+#sow-health-project {
+  --cover-height: 345px;
+  height: auto;
+  min-height: 550px;
+}
+
+#sow-health-project .sow-health-cover {
+  height: var(--cover-height);
+  margin: 24px 20px 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+#sow-health-project .sow-health-cover video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+}
+
+#sow-health-project h3 {
+  font-size: 28px;
+}
+
+#sow-health-project .sow-health-authors {
+  margin: 0 0 8px;
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+#sow-health-project .sow-own-name {
+  color: #000;
+}
+
+#sow-health-project .sow-coauthors {
+  color: #4d6257;
+}
+
+#sow-health-project .sow-health-description,
+#sow-health-project .vp-project-panel p,
+#sow-health-project .vp-project-panel li {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+#sow-health-project .sow-health-description {
+  margin: 0;
+}
+
+#sow-health-project .vp-project-panel h4 {
+  font-size: 24px;
+}
+
+/* Place the three-dot button beside the front title */
+#sow-health-project .vp-project-details:not([open]) > summary {
+  top: calc(var(--cover-height) + 42px);
+}
+
+@media (max-width: 600px) {
+  #sow-health-project {
+    --cover-height: 240px;
+  }
+}
+
+
+
+    
 
 </style>
 </head>
@@ -2508,17 +2585,15 @@ img[src$="caged-chicken-robot-cover.jpg"] {
       <p class="srt-dates">Jan 2024 – Dec 2024</p>
 
       <p class="srt-description">
-        Contributed to a national-level undergraduate research project
-        developing a robot-based system for non-contact monitoring of
-        lactating sows and piglets, aiming to reduce reliance on manual
-        inspection. I helped design the data acquisition platform and
-        prepare an annotated dataset covering four sow postures and
-        individual piglets. My research focused on comparing NanoDet-Plus
-        and YOLOv8 detectors and using TensorRT to deploy a lightweight
-        model on Jetson Nano. The work connected farm data collection
-        with model evaluation and edge deployment to support automated
-        livestock behaviour monitoring.
-      </p>
+  Contributed to a national-level undergraduate research project
+  investigating visual behaviour monitoring for lactating sows
+  and piglets. I helped prepare an annotated image dataset covering
+  four sow postures and individual piglets, compared NanoDet-Plus
+  and YOLOv8 detectors, and used TensorRT to deploy and accelerate
+  a lightweight model on Jetson Nano. The research focused on
+  evaluating detection performance and inference speed, and analysing
+  inspection data to explore sow behaviour patterns.
+</p>
 
     </div>
   </div>
@@ -2727,6 +2802,96 @@ img[src$="caged-chicken-robot-cover.jpg"] {
   </details>
 
 </article>
+
+
+      <article class="vp-project-card"
+         id="sow-health-project"
+         aria-labelledby="sow-health-title">
+
+  <div class="vp-project-cover sow-health-cover">
+    <video autoplay muted loop playsinline
+           preload="metadata"
+           aria-label="Sow health monitoring inspection robot demonstration">
+      <source src="assets/videos/sow-health-monitoring-demo.mp4"
+              type="video/mp4">
+      Your browser does not support embedded video.
+    </video>
+  </div>
+
+  <div class="vp-project-front">
+    <h3 id="sow-health-title">
+      Intelligent Inspection Robot for Sows’ Health Monitoring
+    </h3>
+
+    <p class="project-authors sow-health-authors">
+      <span class="sow-own-name">Yuhan Wei</span><span
+        class="sow-coauthors">, Lina Yang, Aijia Xue, Yao Liu</span>
+    </p>
+
+    <p class="project-date">Apr 2024 – Jun 2024</p>
+
+    <p class="sow-health-description">
+      A team competition project integrating an inspection robot,
+      multiple sensing modules and a monitoring platform to support
+      non-contact sow health monitoring.
+    </p>
+  </div>
+
+  <details class="vp-project-details">
+    <summary aria-label="Open or close sow health monitoring project details">
+      <span class="vp-open-icon" aria-hidden="true">⋮</span>
+      <span class="vp-close-icon" aria-hidden="true">×</span>
+    </summary>
+
+    <div class="vp-project-panel" tabindex="0">
+      <h3>
+        Intelligent Inspection Robot for Sows’ Health Monitoring
+      </h3>
+
+      <h4>Overview</h4>
+      <p>
+        This team competition project focused on integrating a
+        rail-mounted inspection robot with sensing modules and a
+        monitoring platform for sow health management. The system
+        design covered non-contact temperature monitoring, body-size
+        measurement and weight estimation, abnormal-sound recognition,
+        pig counting and environmental sensing. A web and mobile
+        platform brought inspection information together for farm
+        management.
+      </p>
+
+      <h4>My Contribution</h4>
+      <ul>
+        <li>
+          Contributed to hardware debugging and integration of the
+          inspection robot and its sensing modules.
+        </li>
+        <li>
+          Participated in developing the monitoring platform to
+          display inspection data and health-monitoring information.
+        </li>
+      </ul>
+
+      <h4>Key Features</h4>
+      <ul>
+        <li>
+          Rail-mounted robotic inspection and sensor data acquisition.
+        </li>
+        <li>
+          A system design combining visual, thermal, acoustic
+          and environmental monitoring.
+        </li>
+        <li>
+          Centralised presentation of inspection data through
+          a web and mobile monitoring platform.
+        </li>
+      </ul>
+    </div>
+  </details>
+</article>
+
+
+      
 
       
 
