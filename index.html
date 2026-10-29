@@ -2690,6 +2690,74 @@ img[src$="caged-chicken-robot-cover.jpg"] {
   box-sizing: border-box;
 }
 
+    /* Unify these three project media frames */
+#sow-health-project,
+#poultry-robot-project,
+#egg-inspection-project {
+  --cover-height: 345px;
+  height: auto;
+}
+
+:is(
+  #sow-health-project,
+  #poultry-robot-project,
+  #egg-inspection-project
+) .vp-project-cover {
+  width: calc(100% - 40px);
+  max-width: 460px;
+  height: var(--cover-height);
+  aspect-ratio: auto;
+  margin: 24px auto 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+/* Carousel slides fill the frame */
+#egg-inspection-project .carousel-slide {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border: none;
+  border-radius: 0;
+  background: #fff;
+}
+
+/* Keep all image and video content visible */
+:is(
+  #sow-health-project,
+  #poultry-robot-project,
+  #egg-inspection-project
+) .vp-project-cover :is(img, video) {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
+}
+
+/* Keep the three-dot button beside the title */
+:is(
+  #sow-health-project,
+  #poultry-robot-project,
+  #egg-inspection-project
+) .vp-project-details:not([open]) > summary {
+  top: calc(var(--cover-height) + 42px);
+}
+
+/* Smaller frames on mobile */
+@media (max-width: 600px) {
+  #sow-health-project,
+  #poultry-robot-project,
+  #egg-inspection-project {
+    --cover-height: 240px;
+  }
+}
+
 
     
 
