@@ -2675,9 +2675,23 @@ img[src$="caged-chicken-robot-cover.jpg"] {
   }
 }
 
+    #projects .vp-project-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+#projects .vp-project-grid > .vp-project-card {
+  width: 100%;
+  min-width: 0;
+  grid-column: auto;
+  box-sizing: border-box;
+}
+
 
     
-
 
 
     
@@ -3087,7 +3101,7 @@ img[src$="caged-chicken-robot-cover.jpg"] {
 
 </div>
 
-
+<div class="vp-project-front">
     <h3 id="vcpp-tourism-title">
       Agricultural Tourism and Cultural Visit System
     </h3>
