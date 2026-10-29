@@ -2261,7 +2261,50 @@ a {
   object-position: center;
 }
 
+    /* Larger image frame with space above */
+#caged-chicken-robot-project .vp-project-cover {
+  width: calc(100% - 40px);
+  max-width: 460px;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  margin: 24px auto 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  box-sizing: border-box;
+}
 
+#caged-chicken-robot-project .carousel-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  overflow: hidden;
+  border: none;
+  border-radius: 0;
+}
+
+/* Show charts and dashboard in full */
+#caged-chicken-robot-project .carousel-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Crop only the robot photo: retain the lower part */
+#caged-chicken-robot-project
+img[src$="caged-chicken-robot-cover.jpg"] {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  max-height: none;
+}
 
 
     
