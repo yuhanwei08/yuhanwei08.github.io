@@ -2575,6 +2575,106 @@ img[src$="caged-chicken-robot-cover.jpg"] {
   right: 12px;
 }
 
+    /* Egg inspection project */
+#egg-inspection-project {
+  --cover-height: 345px;
+  height: auto;
+  min-height: 550px;
+}
+
+#egg-inspection-project .egg-cover {
+  height: var(--cover-height);
+  margin: 24px 20px 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+#egg-inspection-project .carousel-slide {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border: none;
+  border-radius: 0;
+  background: #fff;
+}
+
+#egg-inspection-project .carousel-slide[hidden] {
+  display: none !important;
+}
+
+#egg-inspection-project .carousel-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+#egg-inspection-project h3 {
+  font-size: 28px;
+}
+
+#egg-inspection-project .vp-project-front h3 {
+  margin-right: 44px;
+}
+
+#egg-inspection-project .egg-authors,
+#egg-inspection-project .project-date {
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+#egg-inspection-project .egg-authors {
+  margin: 0 0 8px;
+}
+
+#egg-inspection-project .egg-own-name {
+  color: #000;
+}
+
+#egg-inspection-project .egg-coauthors {
+  color: #4d6257;
+}
+
+#egg-inspection-project .project-date {
+  margin: 0 0 16px;
+  color: #000;
+}
+
+#egg-inspection-project .egg-description,
+#egg-inspection-project .vp-project-panel p,
+#egg-inspection-project .vp-project-panel li {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+#egg-inspection-project .egg-description {
+  margin: 0;
+}
+
+#egg-inspection-project .vp-project-panel h4 {
+  font-size: 24px;
+}
+
+#egg-inspection-project
+.vp-project-details:not([open]) > summary {
+  top: calc(var(--cover-height) + 42px);
+}
+
+@media (max-width: 600px) {
+  #egg-inspection-project {
+    --cover-height: 240px;
+  }
+}
+
 
     
 
@@ -3243,6 +3343,130 @@ img[src$="caged-chicken-robot-cover.jpg"] {
       
 <!-- Add this article inside the existing .vp-project-grid. -->
 <article class="vp-project-card"
+         id="egg-inspection-project"
+         aria-labelledby="egg-inspection-title">
+
+  <div class="vp-project-cover project-carousel egg-cover"
+       aria-label="Egg inspection system project images">
+
+    <div class="carousel-slide">
+      <img src="assets/img/egg-conveyor-prototype.jpg"
+           alt="Egg collection conveyor inspection prototype">
+    </div>
+
+    <div class="carousel-slide" hidden>
+      <img src="assets/img/egg-yolov5-detection.jpg"
+           alt="YOLOv5 egg detection results">
+    </div>
+
+    <div class="carousel-slide" hidden>
+      <img src="assets/img/egg-web-login.jpg"
+           alt="Egg inspection monitoring platform login page">
+    </div>
+
+    <div class="carousel-slide" hidden>
+      <img src="assets/img/egg-edge-device.jpg"
+           alt="Edge computing device installed above the conveyor">
+    </div>
+
+  </div>
+
+  <div class="vp-project-front">
+
+    <h3 id="egg-inspection-title">
+      An Edge Computing-Based Egg Collection Conveyor Belt
+      System for Online Egg Inspection
+    </h3>
+
+    <p class="egg-authors">
+      <span class="egg-own-name">Yuhan Wei</span><span
+        class="egg-coauthors">, Lina Yang, Yuxiang Liu</span>
+    </p>
+
+    <p class="project-date">May 2024 – Jul 2024</p>
+
+    <p class="egg-description">
+      An edge-based egg inspection system combining YOLOv5
+      detection, DeepSORT tracking and conveyor-based counting,
+      with results displayed through a web monitoring platform.
+    </p>
+
+  </div>
+
+  <details class="vp-project-details">
+
+    <summary aria-label="Open or close egg inspection project details">
+      <span class="vp-open-icon" aria-hidden="true">⋮</span>
+      <span class="vp-close-icon" aria-hidden="true">×</span>
+    </summary>
+
+    <div class="vp-project-panel" tabindex="0">
+
+      <h3>
+        An Edge Computing-Based Egg Collection Conveyor Belt
+        System for Online Egg Inspection
+      </h3>
+
+      <h4>Overview</h4>
+      <p>
+        This team project developed an online egg inspection
+        system for collection conveyors. YOLOv5 detected and
+        classified eggs, while DeepSORT maintained target
+        identities for tracking and counting. The models were
+        deployed on Jetson Nano, with inspection results and
+        historical records displayed through a web platform.
+        Conveyor speed and detection timing were also used
+        to estimate the source cage of detected eggs.
+      </p>
+
+      <h4>My Contribution</h4>
+      <ul>
+        <li>
+          Helped test and debug DeepSORT-based egg tracking
+          and line-crossing counting, checking for duplicate
+          and missed counts.
+        </li>
+        <li>
+          Compared automated counts with manual records and
+          evaluated counting accuracy, classification errors
+          and processing speed.
+        </li>
+      </ul>
+
+      <h4>Key Features</h4>
+      <ul>
+        <li>
+          YOLOv5-based egg detection and classification.
+        </li>
+        <li>
+          DeepSORT tracking and line-crossing counting.
+        </li>
+        <li>
+          Camera-based image acquisition and edge deployment
+          on Jetson Nano.
+        </li>
+        <li>
+          Web-based inspection results, historical records
+          and data visualisation.
+        </li>
+        <li>
+          Source-cage estimation using conveyor speed
+          and detection timing.
+        </li>
+      </ul>
+
+      <h4>Technologies</h4>
+      <p>
+        Python · PyTorch · YOLOv5 · DeepSORT · Jetson Nano ·
+        Vue · Spring Boot
+      </p>
+
+    </div>
+  </details>
+
+</article>
+      
+      <article class="vp-project-card"
          id="poultry-robot-project"
          aria-labelledby="poultry-project-title">
 
