@@ -2328,7 +2328,61 @@ img[src$="caged-chicken-robot-cover.jpg"] {
 }
 
     
-  </style>
+  
+/* Unified cover frames and MATLAB mark */
+#caged-chicken-robot-project .vp-project-cover,
+#matlab-music-project .vp-project-cover {
+  width: calc(100% - 40px);
+  max-width: 460px;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  margin: 24px auto 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+  box-sizing: border-box;
+}
+#caged-chicken-robot-project .carousel-slide,
+#matlab-music-project .carousel-slide {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  overflow: hidden;
+  border: none;
+  border-radius: 0;
+}
+#matlab-music-project .carousel-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+#matlab-music-project {
+  height: auto;
+  min-height: 550px;
+}
+#matlab-music-project .matlab-author-score-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+#matlab-music-project .matlab-author-score-row p { margin: 0; }
+#matlab-music-project .matlab-score {
+  margin-left: auto;
+  color: #c62828;
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+</style>
 </head>
 
 <body>
@@ -2676,51 +2730,35 @@ img[src$="caged-chicken-robot-cover.jpg"] {
 
       
 
-      <article class="vp-project-card">
-
-        <!-- Front: images and short introduction -->
-        <div class="vp-project-cover project-carousel"
-     aria-label="MATLAB music player screenshots">
-
-  <div class="carousel-slide">
-    <img
-      src="assets/img/matlab-player-playback.png"
-      alt="English music player interface showing audio playback and waveforms">
+      <article class="vp-project-card" id="matlab-music-project"
+         aria-labelledby="matlab-project-title">
+  <div class="vp-project-cover project-carousel"
+       aria-label="MATLAB music player screenshots">
+    <div class="carousel-slide">
+      <img src="assets/img/matlab-player-playback.png" alt="English music player showing playback and waveforms">
+    </div>
+    <div class="carousel-slide" hidden>
+      <img src="assets/img/matlab-player-spectrum.png" alt="Music player frequency spectrum">
+    </div>
+    <div class="carousel-slide" hidden>
+      <img src="assets/img/matlab-player-envelope.png" alt="Audio waveform and envelope visualisation">
+    </div>
+    <div class="carousel-slide" hidden>
+      <img src="assets/img/matlab-player-interface.png" alt="Initial English music player interface">
+    </div>
   </div>
 
-  <div class="carousel-slide" hidden>
-    <img
-      src="assets/img/matlab-player-spectrum.png"
-      alt="Frequency spectrum displayed in the music player">
+  <div class="vp-project-front">
+    <h3 id="matlab-project-title">MATLAB-based Music Player</h3>
+    <div class="matlab-author-score-row">
+      <p class="vp-project-meta project-authors"><strong>Yuhan Wei</strong></p>
+      <span class="matlab-score">98/100</span>
+    </div>
+    <p class="project-date">Jun 2026</p>
+    <p>A desktop music player with audio effects and signal visualisation.</p>
   </div>
 
-  <div class="carousel-slide" hidden>
-    <img
-      src="assets/img/matlab-player-envelope.png"
-      alt="Audio waveform and envelope visualisation">
-  </div>
-
-
-
-          
-
-        <div class="vp-project-front">
-  <h3>MATLAB-based Music Player</h3>
-
-  <p class="vp-project-meta project-authors">
-  <strong>Yuhan Wei</strong>
-</p>
-          
-          <p class="project-date">Jun 2026</p>
-
-  <p>
-    A desktop music player with audio effects
-    and signal visualisation.
-  </p>
-</div>
-
-        <!-- Three dots open an overlay within the same card -->
-        <details class="vp-project-details">
+  <details class="vp-project-details">
           <summary aria-label="Open or close project details">
             <span class="vp-open-icon" aria-hidden="true">⋮</span>
             <span class="vp-close-icon" aria-hidden="true">×</span>
@@ -3117,32 +3155,23 @@ img[src$="caged-chicken-robot-cover.jpg"] {
 
   <script>
 (() => {
-  const card = document.getElementById('caged-chicken-robot-project');
-  if (!card) return;
-
-  const title = card.querySelector('.vp-project-front h3');
-  const details = card.querySelector('.vp-project-details');
-  const button = details?.querySelector('summary');
-  if (!title || !button) return;
-
-  function alignButton() {
-    if (details.open) {
-      button.style.top = '12px';
-      return;
+  ['caged-chicken-robot-project', 'matlab-music-project'].forEach((id) => {
+    const card = document.getElementById(id);
+    if (!card) return;
+    const title = card.querySelector('.vp-project-front h3');
+    const details = card.querySelector('.vp-project-details');
+    const button = details?.querySelector('summary');
+    if (!title || !button) return;
+    function alignButton() {
+      if (details.open) { button.style.top = '12px'; return; }
+      button.style.top = `${title.getBoundingClientRect().top - card.getBoundingClientRect().top - card.clientTop}px`;
     }
-
-    const cardRect = card.getBoundingClientRect();
-    const titleRect = title.getBoundingClientRect();
-
-    button.style.top =
-      `${titleRect.top - cardRect.top - card.clientTop}px`;
-  }
-
-  new ResizeObserver(alignButton).observe(card);
-  details.addEventListener('toggle', alignButton);
-  window.addEventListener('load', alignButton);
-  document.fonts.ready.then(alignButton);
-  alignButton();
+    new ResizeObserver(alignButton).observe(card);
+    details.addEventListener('toggle', alignButton);
+    window.addEventListener('load', alignButton);
+    document.fonts.ready.then(alignButton);
+    alignButton();
+  });
 })();
 </script>
 
