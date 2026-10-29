@@ -2456,6 +2456,44 @@ img[src$="caged-chicken-robot-cover.jpg"] {
 }
 
 
+    /* SRT project image frame */
+#srt-sow-piglet-project .srt-image-space {
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #fff;
+}
+
+#srt-sow-piglet-project .project-carousel {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+#srt-sow-piglet-project .carousel-slide {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+}
+
+#srt-sow-piglet-project .carousel-slide[hidden] {
+  display: none !important;
+}
+
+#srt-sow-piglet-project .carousel-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+}
+
+
+    
+
+
 
     
 
@@ -2555,12 +2593,40 @@ img[src$="caged-chicken-robot-cover.jpg"] {
   <div class="srt-layout">
 
     <!-- Space reserved for future project images -->
-    <figure class="project-gallery srt-image-space">
+   <figure class="project-gallery srt-image-space">
   <div class="gallery-category">
     Computer Vision / Edge AI
   </div>
 
-  <!-- Project images will be added here later -->
+  <div class="project-carousel"
+       aria-label="Sow and piglet research project images">
+
+    <div class="carousel-slide">
+      <img src="assets/img/srt-robot-design.png"
+           alt="Inspection robot exterior design">
+    </div>
+
+    <div class="carousel-slide" hidden>
+      <img src="assets/img/srt-robot-3d.png"
+           alt="Three-dimensional CAD model of the inspection robot">
+    </div>
+
+    <div class="carousel-slide" hidden>
+      <img src="assets/img/srt-model-architecture.png"
+           alt="Lightweight detection model architecture">
+    </div>
+
+    <div class="carousel-slide" hidden>
+      <img src="assets/img/srt-piglet-behaviours.jpg"
+           alt="Examples of six piglet behaviour categories">
+    </div>
+
+    <div class="carousel-slide" hidden>
+      <img src="assets/img/srt-web-login-en.png"
+           alt="English translation of the monitoring platform login screen">
+    </div>
+
+  </div>
 </figure>
 
     <!-- Project information -->
