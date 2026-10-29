@@ -2141,6 +2141,97 @@ a {
 .gallery-category {
   font-size: 18px;
 }
+    /* Caged chicken inspection robot card */
+#caged-chicken-robot-project {
+  height: auto;
+  min-height: 550px;
+}
+
+#caged-chicken-robot-project .vp-project-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Titles */
+#caged-chicken-robot-project h3 {
+  font-size: 28px;
+}
+
+/* Author and award row */
+#caged-chicken-robot-project .caged-author-award-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-bottom: 8px;
+}
+
+#caged-chicken-robot-project .project-authors {
+  flex: 1 1 200px;
+  margin: 0;
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+#caged-chicken-robot-project .caged-own-name {
+  color: #000;
+}
+
+#caged-chicken-robot-project .caged-coauthors {
+  color: #4d6257;
+}
+
+#caged-chicken-robot-project .caged-award {
+  margin-left: auto;
+  color: #c62828;
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Date */
+#caged-chicken-robot-project .project-date {
+  margin: 0 0 16px;
+  color: #000;
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Body text */
+#caged-chicken-robot-project .caged-front-description,
+#caged-chicken-robot-project .vp-project-panel p,
+#caged-chicken-robot-project .vp-project-panel ul,
+#caged-chicken-robot-project .vp-project-panel li {
+  color: var(--text);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+#caged-chicken-robot-project .caged-front-description {
+  margin: 0;
+}
+
+/* Detail headings */
+#caged-chicken-robot-project .vp-project-panel h4 {
+  font-size: 24px;
+}
+
+
+
+
     
   </style>
 </head>
@@ -2365,6 +2456,130 @@ a {
 
   <div class="section-content">
     <div class="vp-project-grid">
+     <article class="vp-project-card"
+         id="caged-chicken-robot-project"
+         aria-labelledby="caged-chicken-project-title">
+
+  <!-- Cover carousel -->
+  <div class="vp-project-cover project-carousel"
+       aria-label="Caged chicken inspection robot project images">
+
+    <div class="carousel-slide">
+      <img
+        src="assets/img/caged-chicken-robot-cover.jpg"
+        alt="Inspection robot operating beside multi-tier chicken cages">
+    </div>
+
+    <div class="carousel-slide" hidden>
+      <img
+        src="assets/img/caged-chicken-phenotypes.png"
+        alt="Training loss and precision–recall curves for YOLOv5s, YOLOv5m and YOLOv5l">
+    </div>
+
+    <div class="carousel-slide" hidden>
+      <img
+        src="assets/img/caged-chicken-dashboard.png"
+        alt="Poultry health, environmental and production monitoring dashboard">
+    </div>
+
+  </div>
+
+  <!-- Front of the card -->
+  <div class="vp-project-front">
+
+    <h3 id="caged-chicken-project-title">
+      Intelligent Inspection Robot for Multi-tier Caged Chicken Farms
+    </h3>
+
+    <div class="caged-author-award-row">
+
+      <p class="vp-project-meta project-authors">
+        <span class="caged-own-name">Yuhan Wei</span><span
+          class="caged-coauthors">, Binbin Xie, Yao Liu</span>
+      </p>
+
+      <span class="caged-award">National First Prize</span>
+
+    </div>
+
+    <p class="project-date">Oct 2023 – Dec 2023</p>
+
+    <p class="caged-front-description">
+      An intelligent inspection robot combining visual monitoring
+      with environmental sensing to support poultry health management.
+    </p>
+
+  </div>
+
+  <!-- Details within the same card -->
+  <details class="vp-project-details">
+
+    <summary aria-label="Open or close inspection robot project details">
+      <span class="vp-open-icon" aria-hidden="true">⋮</span>
+      <span class="vp-close-icon" aria-hidden="true">×</span>
+    </summary>
+
+    <div class="vp-project-panel" tabindex="0">
+
+      <h3>
+        Intelligent Inspection Robot for Multi-tier Caged Chicken Farms
+      </h3>
+
+      <h4>Overview</h4>
+      <p>
+        This was my first team engineering project, introducing me
+        to computer vision applications in agricultural robotics.
+        The team developed an inspection system combining
+        visible-light and thermal imaging with environmental
+        sensing to monitor poultry conditions. A web and mobile
+        platform brings inspection information together to
+        support poultry health management.
+      </p>
+
+      <h4>My Contribution</h4>
+      <ul>
+        <li>
+          Assisted with collecting and annotating chicken images
+          to prepare data for model training.
+        </li>
+        <li>
+          Participated in basic model training as part of
+          the team's visual monitoring work.
+        </li>
+      </ul>
+
+      <h4>Key Features</h4>
+      <ul>
+        <li>
+          Mobile inspection and image acquisition across
+          multiple cage levels.
+        </li>
+        <li>
+          Visible-light and thermal imaging for monitoring
+          chicken conditions.
+        </li>
+        <li>
+          Visual analysis of abnormal head features, prolonged
+          beak opening, flock clustering and dead birds.
+        </li>
+        <li>
+          Environmental sensing and a monitoring platform
+          for inspection data and alerts.
+        </li>
+      </ul>
+
+      <h4>Award</h4>
+      <p>
+        National First Prize — 5th Global Campus Artificial
+        Intelligence Algorithm Elite Competition.
+      </p>
+
+    </div>
+  </details>
+
+</article>
+
+      
 
       <article class="vp-project-card">
 
