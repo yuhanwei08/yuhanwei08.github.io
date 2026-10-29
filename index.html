@@ -3086,5 +3086,39 @@ img[src$="caged-chicken-robot-cover.jpg"] {
     }, 1000);
   });
 </script>
+
+  <script>
+(() => {
+  const card = document.getElementById('caged-chicken-robot-project');
+  if (!card) return;
+
+  const title = card.querySelector('.vp-project-front h3');
+  const details = card.querySelector('.vp-project-details');
+  const button = details?.querySelector('summary');
+  if (!title || !button) return;
+
+  function alignButton() {
+    if (details.open) {
+      button.style.top = '12px';
+      return;
+    }
+
+    const cardRect = card.getBoundingClientRect();
+    const titleRect = title.getBoundingClientRect();
+
+    button.style.top =
+      `${titleRect.top - cardRect.top - card.clientTop}px`;
+  }
+
+  new ResizeObserver(alignButton).observe(card);
+  details.addEventListener('toggle', alignButton);
+  window.addEventListener('load', alignButton);
+  document.fonts.ready.then(alignButton);
+  alignButton();
+})();
+</script>
+
+
+  
 </body>
 </html>
