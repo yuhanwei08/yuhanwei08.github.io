@@ -3324,8 +3324,8 @@ img[src$="caged-chicken-robot-cover.jpg"] {
   <main>
     <section id="intro" class="hero" aria-labelledby="intro-title">
       <div class="hero-content">
-       <h1 id="intro-title">
-  Hi, I’m <span>Yuhan Wei.</span>
+       <h1 id="intro-title" aria-label="I am Yuhan Wei.">
+  <span id="typing-name" aria-hidden="true">I am Yuhan Wei.</span>
 </h1>
 
 <p class="hero-role">
@@ -3333,8 +3333,8 @@ img[src$="caged-chicken-robot-cover.jpg"] {
 </p>
 
 <p class="hero-description">
-  I build vision-based systems for robots, from model training
-  to edge deployment, with a focus on agricultural inspection robotics.
+  Exploring computer vision and embedded systems for agricultural
+  robotics, from image recognition to robot sensing and control.
 </p>
 
        <div class="profile-social-icons hero-social-icons">
@@ -4264,11 +4264,7 @@ img[src$="caged-chicken-robot-cover.jpg"] {
         </li>
       </ul>
 
-      <h4>Technologies</h4>
-      <p>
-        STM32F103 · Embedded C · OpenMV · MicroPython · PWM ·
-        Reflectance Sensors · Ultrasonic Sensing · OLED · Bluetooth/UART
-      </p>
+     
     </div>
   </details>
 </article>
@@ -4547,6 +4543,60 @@ img[src$="caged-chicken-robot-cover.jpg"] {
   window.addEventListener('load', alignButton);
   document.fonts.ready.then(alignButton);
   alignButton();
+})();
+</script>
+
+
+  <style>
+#intro-title {
+  min-height: 1.3em;
+}
+
+#typing-name {
+  color: white;
+}
+
+#typing-name::after {
+  content: "|";
+  margin-left: 4px;
+  font-weight: 400;
+  animation: cursor-blink 0.8s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  50% { opacity: 0; }
+}
+</style>
+
+<script>
+(() => {
+  const element = document.getElementById('typing-name');
+  if (!element) return;
+
+  const text = 'I am Yuhan Wei.';
+  let index = 0;
+  let deleting = false;
+
+  element.textContent = '';
+
+  function type() {
+    index += deleting ? -1 : 1;
+    element.textContent = text.slice(0, index);
+
+    let delay = deleting ? 70 : 140;
+
+    if (index === text.length && !deleting) {
+      deleting = true;
+      delay = 2500;
+    } else if (index === 0 && deleting) {
+      deleting = false;
+      delay = 500;
+    }
+
+    setTimeout(type, delay);
+  }
+
+  setTimeout(type, 400);
 })();
 </script>
 
