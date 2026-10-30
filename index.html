@@ -3103,7 +3103,43 @@ img[src$="caged-chicken-robot-cover.jpg"] {
 .hero .hero-social-icons a:hover {
   color: var(--green);
 }
-  
+
+
+    /* Sidebar introduction */
+.sidebar .profile-role {
+  display: block;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* Homepage introduction */
+.hero .hero-role {
+  max-width: 850px;
+  line-height: 1.5;
+}
+
+.hero .hero-description {
+  max-width: 760px;
+  margin: 20px 0 0;
+  font-size: 22px;
+  line-height: 1.6;
+  color: var(--dark-green);
+}
+
+/* Allow four icons to fit on smaller screens */
+.hero .hero-social-icons {
+  flex-wrap: wrap;
+}
+
+/* About Me paragraphs */
+#about .card p {
+  font-size: 22px;
+  line-height: 1.65;
+}
+
+#about .card p + p {
+  margin-top: 18px;
+}
 
     
     
@@ -3118,7 +3154,10 @@ img[src$="caged-chicken-robot-cover.jpg"] {
     <a class="profile" href="#intro">
       <span class="avatar" aria-hidden="true">YW</span>
       <strong class="profile-name">Yuhan Wei</strong>
-      <span class="profile-role">MSc Robotics Student</span>
+     <span class="profile-role">
+  MSc Robotics · Manchester<br>
+  Computer Vision · Edge AI
+</span>
     </a>
 
     
@@ -3159,10 +3198,18 @@ img[src$="caged-chicken-robot-cover.jpg"] {
   <main>
     <section id="intro" class="hero" aria-labelledby="intro-title">
       <div class="hero-content">
-        <p class="eyebrow">Robotics · Engineering</p>
-        <h1 id="intro-title">Hi, I’m <span>Yuhan Wei.</span></h1>
-        <p class="hero-role">MSc Robotics Student</p>
-        <p class="hero-university">The University of Manchester</p>
+       <h1 id="intro-title">
+  Hi, I’m <span>Yuhan Wei.</span>
+</h1>
+
+<p class="hero-role">
+  MSc Robotics student at the University of Manchester
+</p>
+
+<p class="hero-description">
+  I build vision-based systems for robots, from model training
+  to edge deployment, with a focus on agricultural inspection robotics.
+</p>
 
        <div class="profile-social-icons hero-social-icons">
 
@@ -3197,24 +3244,59 @@ img[src$="caged-chicken-robot-cover.jpg"] {
             fill="none" stroke="white" stroke-width="2.5"/>
     </svg>
   </span>
+           </svg>
+</span>
+
+<!-- Email -->
+<a class="profile-social-icon"
+   href="mailto:yuhan.wei-6@postgrad.manchester.ac.uk"
+   aria-label="Email"
+   title="Email">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <rect x="2" y="4" width="20" height="16"
+          rx="2" fill="currentColor"/>
+    <path d="M3 6l9 7 9-7"
+          fill="none"
+          stroke="white"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+  </svg>
+</a>
+
+</div>
+         
 
 </div>
       </div>
     </section>
 
     <section id="about" aria-labelledby="about-title">
-      <h2 id="about-title" class="section-title">About Me</h2>
-      <div class="section-content">
-        <div class="card">
-          <p>
-            I am an MSc Robotics student at The University of Manchester.
-            I received my Bachelor of Engineering in Electronic Information
-            Science and Technology from Nanjing Agricultural University
-            in June 2026.
-          </p>
-        </div>
-      </div>
-    </section>
+  <h2 id="about-title" class="section-title">About Me</h2>
+
+  <div class="section-content">
+    <div class="card">
+      <p>
+        I am an MSc Robotics student at The University of Manchester,
+        with a Bachelor of Engineering in Electronic Information
+        Science and Technology from Nanjing Agricultural University.
+        My interests lie in computer vision, embedded systems and
+        their applications in robotics.
+      </p>
+
+      <p>
+        Through individual and team projects, I have gained experience
+        in image classification, object detection, robot control and
+        application development. My work has included developing a
+        CNN-based chrysanthemum recognition application, contributing
+        to vision-based agricultural inspection projects, and
+        implementing navigation and sensing functions for a
+        line-following robot. At Manchester, I hope to deepen my
+        knowledge of robot perception and autonomy.
+      </p>
+    </div>
+  </div>
+</section>
 
   
 
