@@ -2862,7 +2862,28 @@ img[src$="caged-chicken-robot-cover.jpg"] {
   color: #595959;
 }
 
+#skills .skills-bullet-list {
+  margin: 0;
+  padding-left: 24px;
+  list-style-type: disc;
+}
 
+#skills .skills-bullet-list li {
+  display: list-item;
+  margin-bottom: 16px;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+#skills .skills-bullet-list li:last-child {
+  margin-bottom: 0;
+}
+
+#skills .skills-bullet-list li::marker {
+  color: #595959;
+}
     
 
 
@@ -3804,24 +3825,45 @@ img[src$="caged-chicken-robot-cover.jpg"] {
 </section>
 
     <section id="skills" aria-labelledby="skills-title">
-      <h2 id="skills-title" class="section-title">Skills</h2>
-      <div class="section-content">
-        <div class="card">
-          <h3>Programming Languages</h3>
-          <div class="skill-list">
-            <span>Python</span>
-            <span>C</span>
-            <span>C++</span>
-          </div>
-        </div>
-      </div>
-    </section>
+  <h2 id="skills-title" class="section-title">Skills</h2>
+
+  <div class="section-content">
+    <div class="card">
+      <ul class="skills-bullet-list">
+
+        <li>
+          Programming: Python, C, C++, MATLAB
+        </li>
+
+        <li>
+          Computer Vision &amp; Deep Learning:
+          PyTorch, YOLO, Image Classification, Object Detection
+        </li>
+
+        <li>
+          Embedded Systems: STM32, OpenMV
+        </li>
+
+        <li>
+          Edge Deployment: Jetson Nano, TensorRT
+        </li>
+
+        <li>
+          Application Development: MATLAB App Designer, MFC, Flask
+        </li>
+
+        <li>
+          Databases &amp; Connectivity: Microsoft Access, ODBC
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</section>
 
 
     <section id="awards" aria-labelledby="awards-title">
-  <h2 id="awards-title" class="section-title">
-    Awards &amp; Achievements
-  </h2>
+<h2 id="awards-title" class="section-title">Awards</h2>
 
   <div class="section-content">
     <div class="card">
@@ -3843,9 +3885,9 @@ img[src$="caged-chicken-robot-cover.jpg"] {
         </li>
 
         <li>
-          Team Member, National-Level Undergraduate Innovation
-          Training Project (SRT), Nanjing Agricultural University
-        </li>
+  Team Member, National-Level Undergraduate Innovation
+  Training Project (SRT)
+</li>
 
         <li>
           Second-Class Merit Student Scholarship,
@@ -3872,27 +3914,30 @@ img[src$="caged-chicken-robot-cover.jpg"] {
 
    
 
-    <section id="education" aria-labelledby="education-title">
-      <h2 id="education-title" class="section-title">Education</h2>
-      <div class="section-content">
-        <div class="education-grid">
-          <article class="card">
-            <span class="date">Sep 2026 – Present</span>
-            <h3>The University of Manchester</h3>
-            <p>MSc Robotics</p>
-          </article>
+   <section id="education" aria-labelledby="education-title">
+  <h2 id="education-title" class="section-title">Education</h2>
 
-          <article class="card">
-            <span class="date">Sep 2022 – Jun 2026</span>
-            <h3>Nanjing Agricultural University</h3>
-            <p>
-              Bachelor of Engineering in Electronic Information
-              Science and Technology
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
+  <div class="section-content">
+    <div class="education-grid">
+
+      <article class="card">
+        <h3>The University of Manchester</h3>
+        <span class="date">Sep 2026 – Present</span>
+        <p>MSc Robotics</p>
+      </article>
+
+      <article class="card">
+        <h3>Nanjing Agricultural University</h3>
+        <span class="date">Sep 2022 – Jun 2026</span>
+        <p>
+          Bachelor of Engineering in Electronic Information
+          Science and Technology
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
 
     <footer>
       <span>© 2026 Yuhan Wei</span>
