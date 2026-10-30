@@ -2911,6 +2911,43 @@ img[src$="caged-chicken-robot-cover.jpg"] {
   margin: 0;
 }
 
+
+    /* Add white space around these three images */
+#srt-sow-piglet-project
+.carousel-slide img[src$="srt-web-login-cropped.png"],
+
+#caged-chicken-robot-project
+.carousel-slide img[src$="caged-chicken-robot-cover.jpg"],
+
+#egg-inspection-project
+.carousel-slide img[src$="egg-conveyor-scene.png"] {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: auto;
+  bottom: auto;
+
+  width: calc(100% - 32px);
+  height: calc(100% - 32px);
+  max-width: none;
+  max-height: none;
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  object-fit: contain;
+  object-position: center;
+  border-radius: 8px;
+}
+
+/* Preserve the robot photo's cropped view */
+#caged-chicken-robot-project
+.carousel-slide img[src$="caged-chicken-robot-cover.jpg"] {
+  object-fit: cover;
+  object-position: center bottom;
+}
+
     
 
 </style>
